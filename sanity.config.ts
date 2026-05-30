@@ -1,0 +1,124 @@
+import { defineConfig } from 'sanity'
+import { structureTool } from 'sanity/structure'
+import { visionTool } from '@sanity/vision'
+import {
+  BellIcon,
+  DocumentTextIcon,
+  CogIcon,
+  UserIcon,
+  HomeIcon,
+} from '@sanity/icons'
+
+import { schemaTypes }     from './schemas'
+import { theme }           from './studio/theme'
+import StudioLogo          from './studio/StudioLogo'
+import StudioNavbar        from './studio/StudioNavbar'
+import StudioDashboard     from './studio/StudioDashboard'
+
+export default defineConfig({
+  name:    'ibeju-lekki-lga',
+  title:   'Ibeju-Lekki LGA',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  dataset:   process.env.NEXT_PUBLIC_SANITY_DATASET!,
+  basePath:  '/studio',
+
+  // ── Brand theme ─────────────────────────────────────────────────────────────
+  theme,
+
+  // ── Custom studio components ─────────────────────────────────────────────────
+  studio: {
+    components: {
+      logo:    StudioLogo,
+      navbar:  StudioNavbar,
+    },
+  },
+
+  plugins: [
+    structureTool({
+      // ── Custom sidebar structure ─────────────────────────────────────────────
+      structure: (S) =>
+        S.list()
+          .title('Ibeju-Lekki CMS')
+          .items([
+            // Dashboard / Home
+            S.listItem()
+              .title('Dashboard')
+              .icon(HomeIcon)
+              .child(
+                S.component(StudioDashboard)
+                  .title('Welcome — Ibeju-Lekki Content Studio')
+              ),
+
+            S.divider(),
+
+            // News & Events
+            S.listItem()
+              .title('News & Events')
+              .icon(DocumentTextIcon)
+              .child(
+                S.documentTypeList('news')
+                  .title('All Articles')
+                  .defaultOrdering([{ field: 'publishedAt', direction: 'desc' }])
+              ),
+
+            S.divider(),
+
+            // Quick Services
+            S.listItem()
+              .title('Quick Services')
+              .icon(BellIcon)
+              .child(
+                S.documentTypeList('quickService')
+                  .title('Government Services')
+                  .defaultOrdering([{ field: 'order', direction: 'asc' }])
+              ),
+
+            // Chairman's Message
+            S.listItem()
+              .title("Chairman's Message")
+              .icon(UserIcon)
+              .child(
+                S.document()
+                  .schemaType('chairmanMessage')
+                  .documentId('chairmanMessage')
+                  .title("Chairman's Message")
+              ),
+
+            S.divider(),
+
+            // Site Settings
+            S.listItem()
+              .title('Site Settings')
+              .icon(CogIcon)
+              .child(
+                S.document()
+                  .schemaType('siteSettings')
+                  .documentId('siteSettings')
+                  .title('Site Settings')
+              ),
+          ]),
+
+      // ── Default document node (clean editor view) ──────────────────────────
+      defaultDocumentNode: (S, { schemaType }) => {
+        return S.document().views([S.view.form()])
+      },
+    }),
+
+    visionTool({
+      defaultApiVersion: '2024-01-01',
+    }),
+  ],
+
+  schema: { types: schemaTypes },
+
+  // ── Friendly field titles override ────────────────────────────────────────
+  document: {
+    productionUrl: async (prev, { document }) => {
+      const slug = (document as any)?.slug?.current
+      if (document._type === 'news' && slug) {
+        return `${process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'}/news/${slug}`
+      }
+      return prev
+    },
+  },
+})
