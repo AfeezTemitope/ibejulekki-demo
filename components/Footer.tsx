@@ -1,18 +1,16 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import {
-  XIcon as Twitter, FacebookIcon as Facebook, InstagramIcon as Instagram, YoutubeIcon as Youtube,
-  Mail, Phone, MapPin, ExternalLink,
-} from 'lucide-react'
+import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react'
+import { FaXTwitter, FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa6'
 
 const FOOTER_NAV = [
   {
     heading: 'Government',
     links: [
-      { label: 'Executive Chairman', href: '/government/chairman' },
-      { label: 'Executive Council',  href: '/government/executive-council' },
-      { label: 'Management Team',    href: '/government/management-team' },
-      { label: 'Vision & Mission',   href: '/government/vision' },
+      { label: 'Executive Chairman',  href: '/government/chairman' },
+      { label: 'Executive Council',   href: '/government/executive-council' },
+      { label: 'Management Team',     href: '/government/management-team' },
+      { label: 'Vision & Mission',    href: '/government/vision' },
     ],
   },
   {
@@ -27,37 +25,38 @@ const FOOTER_NAV = [
   {
     heading: 'Services',
     links: [
-      { label: 'Pay Levies',      href: '/resources/revenue' },
-      { label: 'Career & Jobs',   href: '/resources/careers' },
-      { label: 'Waste Collection', href: '/resources/waste' },
-      { label: 'Download Forms',  href: '/resources/forms' },
-      { label: 'Report an Issue', href: '/report' },
+      { label: 'Pay Levies',          href: '/resources/revenue' },
+      { label: 'Career & Jobs',       href: '/resources/careers' },
+      { label: 'Waste Collection',    href: '/resources/waste' },
+      { label: 'Download Forms',      href: '/resources/forms' },
+      { label: 'Report an Issue',     href: '/report' },
     ],
   },
   {
     heading: 'Information',
     links: [
-      { label: 'News & Events',     href: '/news' },
-      { label: 'About Ibeju-Lekki', href: '/about/history' },
-      { label: 'Traditional Rulers', href: '/about/traditional-rulers' },
-      { label: 'Arts & Culture',    href: '/about/culture' },
-      { label: 'Contact Us',        href: '/contact' },
+      { label: 'News & Events',       href: '/news' },
+      { label: 'About Ibeju-Lekki',   href: '/about/history' },
+      { label: 'Traditional Rulers',  href: '/about/traditional-rulers' },
+      { label: 'Arts & Culture',      href: '/about/culture' },
+      { label: 'Contact Us',          href: '/contact' },
     ],
   },
 ]
 
-// Placeholder — replaced with Sanity siteSettings when available
 const SETTINGS = {
-  address: 'Local Government Secretariat,\nIbeju-Lekki, Lagos State, Nigeria',
-  phone:   '+234 (0) 813 000 0000',
-  email:   'info@ibejulekki.lg.gov.ng',
-  socials: {
-    twitter:   '#',
-    facebook:  '#',
-    instagram: '#',
-    youtube:   '#',
-  },
+  address:  'Local Government Secretariat,\nIbeju-Lekki, Lagos State, Nigeria',
+  phone:    '+234 (0) 813 000 0000',
+  email:    'info@ibejulekki.lg.gov.ng',
+  socials:  { twitter: '#', facebook: '#', instagram: '#', youtube: '#' },
 }
+
+const SOCIALS = [
+  { Icon: FaXTwitter,   href: SETTINGS.socials.twitter,   label: 'X / Twitter' },
+  { Icon: FaFacebookF,  href: SETTINGS.socials.facebook,  label: 'Facebook' },
+  { Icon: FaInstagram,  href: SETTINGS.socials.instagram, label: 'Instagram' },
+  { Icon: FaYoutube,    href: SETTINGS.socials.youtube,   label: 'YouTube' },
+]
 
 export default function Footer() {
   return (
@@ -71,20 +70,11 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-5 group">
               <div className="relative w-10 h-10 flex-shrink-0">
-                <Image
-                  src="/ibeju-lekki-logo-sm.webp"
-                  alt="Ibeju-Lekki LGA"
-                  fill
-                  className="object-contain"
-                />
+                <Image src="/ibeju-lekki-logo-sm.webp" alt="Ibeju-Lekki LGA" fill className="object-contain" />
               </div>
               <div>
-                <div className="text-[14px] font-bold text-white/90 leading-tight">
-                  Ibeju-Lekki LGA
-                </div>
-                <div className="text-[9px] uppercase tracking-[0.2em] text-white/35">
-                  Official Government Website
-                </div>
+                <div className="text-[14px] font-bold text-white/90 leading-tight">Ibeju-Lekki LGA</div>
+                <div className="text-[9px] uppercase tracking-[0.2em] text-white/35">Official Government Website</div>
               </div>
             </Link>
 
@@ -92,7 +82,6 @@ export default function Footer() {
               The official website of Ibeju-Lekki Local Government Area, Lagos State, Nigeria.
             </p>
 
-            {/* Contact details */}
             <div className="space-y-2.5 text-[12px] mb-6">
               <div className="flex items-start gap-2.5">
                 <MapPin size={13} strokeWidth={1.8} className="text-[#C89B3C] mt-0.5 flex-shrink-0" />
@@ -110,12 +99,7 @@ export default function Footer() {
 
             {/* Socials */}
             <div className="flex items-center gap-2">
-              {[
-                { Icon: Twitter,   href: SETTINGS.socials.twitter,   label: 'X / Twitter' },
-                { Icon: Facebook,  href: SETTINGS.socials.facebook,  label: 'Facebook' },
-                { Icon: Instagram, href: SETTINGS.socials.instagram, label: 'Instagram' },
-                { Icon: Youtube,   href: SETTINGS.socials.youtube,   label: 'YouTube' },
-              ].map(({ Icon, href, label }) => (
+              {SOCIALS.map(({ Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}
@@ -124,7 +108,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="w-8 h-8 rounded-full bg-white/06 flex items-center justify-center hover:bg-[#C89B3C] hover:text-[#0A1F14] transition-all duration-200"
                 >
-                  <Icon size={14} strokeWidth={1.8} />
+                  <Icon size={14} />
                 </a>
               ))}
             </div>
@@ -158,19 +142,15 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/accessibility" className="hover:text-white transition-colors">Accessibility</Link>
-            <a
-              href="https://lagosstate.gov.ng"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1 hover:text-white transition-colors"
-            >
+            <a href="https://lagosstate.gov.ng" target="_blank" rel="noopener noreferrer"
+              className="flex items-center gap-1 hover:text-white transition-colors">
               Lagos State Govt <ExternalLink size={10} />
             </a>
           </div>
         </div>
       </div>
 
-      {/* Color stripe at very bottom */}
+      {/* Color stripe */}
       <div className="flex h-[5px]" aria-hidden="true">
         <div className="flex-1 bg-[#BE1E2D]" />
         <div className="flex-1 bg-[#1A3A7A]" />
