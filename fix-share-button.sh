@@ -1,3 +1,50 @@
+#!/bin/bash
+# Fix: onClick in Server Component — extract ShareButton as Client Component
+set -e
+GREEN='\033[0;32m'; GOLD='\033[0;33m'; NC='\033[0m'
+log()  { echo -e "${GREEN}✓${NC} $1"; }
+info() { echo -e "${GOLD}→${NC} $1"; }
+
+echo ""
+echo -e "${GOLD}═══════════════════════════════════════════════════${NC}"
+echo -e "${GOLD}  Fix: ShareButton client component${NC}"
+echo -e "${GOLD}═══════════════════════════════════════════════════${NC}"
+echo ""
+
+# ── 1. Create ShareButton client component ────────────────────────────────────
+info "Writing components/ShareButton.tsx..."
+cat > components/ShareButton.tsx << 'EOF'
+'use client'
+
+import { Share2 } from 'lucide-react'
+
+export default function ShareButton({ title }: { title: string }) {
+  function handleShare() {
+    if (navigator.share) {
+      navigator.share({ title, url: window.location.href })
+    } else {
+      navigator.clipboard.writeText(window.location.href)
+      alert('Link copied to clipboard')
+    }
+  }
+
+  return (
+    <button
+      onClick={handleShare}
+      className="inline-flex items-center gap-2 text-[12px] font-semibold text-[#0A1F14]/50 hover:text-[#0F3D2E] transition-colors"
+    >
+      <Share2 size={13} strokeWidth={2} />
+      Share this article
+    </button>
+  )
+}
+EOF
+log "components/ShareButton.tsx written"
+
+# ── 2. Rewrite [slug]/page.tsx — no onClick, imports ShareButton ──────────────
+info "Writing app/news/[slug]/page.tsx..."
+mkdir -p "app/news/[slug]"
+cat > "app/news/[slug]/page.tsx" << 'EOF'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { client } from '@/lib/sanity'
@@ -193,3 +240,13 @@ export default async function NewsPost({ params }: { params: { slug: string } })
     </>
   )
 }
+EOF
+log "app/news/[slug]/page.tsx fixed"
+
+echo ""
+echo -e "${GOLD}═══════════════════════════════════════════════════${NC}"
+echo -e "${GREEN}  Fix complete.${NC}"
+echo -e "${GOLD}═══════════════════════════════════════════════════${NC}"
+echo ""
+echo "  Run: git add . && git commit -m 'fix: extract ShareButton as client component' && git push origin main"
+echo ""
