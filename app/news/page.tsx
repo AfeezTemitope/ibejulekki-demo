@@ -2,7 +2,6 @@ import Link from 'next/link'
 import { client } from '@/lib/sanity'
 import { groq } from 'next-sanity'
 import { Calendar, Tag, ArrowRight, Search } from 'lucide-react'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 export const revalidate = 60
@@ -131,7 +130,7 @@ export default async function NewsPage() {
 
   return (
     <>
-      <Header />
+
       <main className="min-h-screen bg-white">
 
         {/* Page header */}

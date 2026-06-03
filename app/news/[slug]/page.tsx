@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation'
 import { client } from '@/lib/sanity'
 import { newsPostBySlugQuery, allNewsSlugsQuery } from '@/lib/queries'
 import { Calendar, Tag, ArrowLeft } from 'lucide-react'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ShareButton from '@/components/ShareButton'
 
@@ -122,7 +121,7 @@ export default async function NewsPost({ params }: { params: { slug: string } })
 
   return (
     <>
-      <Header />
+
       <main className="min-h-screen bg-white">
 
         {/* Hero banner */}
