@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import {
-  ArrowRight, ShieldCheck, HeartPulse, Landmark,
+  ArrowRight, Download, ShieldCheck, HeartPulse, Landmark,
   GraduationCap, Leaf, TrendingUp, Users,
 } from 'lucide-react'
 import Footer from '@/components/Footer'
@@ -21,7 +21,6 @@ export default function Page() {
   return (
     <>
       <main className="min-h-screen bg-white">
-        {/* Chairman + intro */}
         <section className="border-b border-black/10 bg-[#FAFAFA]">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-10 py-10 sm:py-14">
             <nav className="flex items-center flex-wrap gap-1.5 text-[11px] sm:text-[12px] text-black/45 mb-6" aria-label="Breadcrumb">
@@ -53,14 +52,23 @@ export default function Page() {
                 </h1>
                 <p className="mt-3 max-w-xl text-[14px] sm:text-[15px] text-black/55 leading-[1.8]">
                   Seven commitments shaping Ibeju-Lekki under the leadership of Hon. Abdullahi Sesan Olowa,
-                  Executive Chairman. Tap any pillar to read the full details.
+                  Executive Chairman. Tap any pillar to read the full details, or download the manifesto.
                 </p>
+                <div className="mt-5 flex flex-wrap justify-center sm:justify-start gap-3">
+                  <a
+                    href="/performance-report.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#F5A623] px-5 py-3 text-[13px] font-bold text-black transition-colors hover:bg-[#111111] hover:text-[#F5A623]"
+                  >
+                    <Download size={15} strokeWidth={2.5} /> Download the Manifesto (PDF)
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Pillars (clickable) */}
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
             {PILLARS.map((p) => {
