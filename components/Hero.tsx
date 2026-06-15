@@ -242,7 +242,7 @@ export default function Hero() {
                 </div>
                 <p className="text-[13px] text-[#111111]/55 leading-[1.78] italic border-l-[2.5px] border-[#F5A623]/40 pl-3.5">
                   &ldquo;Our dedication is rooted in the comprehensive advancement
-                  of Ibeju-Lekki — through SHIEELD, we are transforming this LGA
+                  of Ibeju-Lekki through SHIEELD, we are transforming this LGA
                   into a model of modern governance.&rdquo;
                 </p>
               </div>
