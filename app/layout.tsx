@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
+import BottomNav from "@/components/BottomNav";
 
 export const metadata: Metadata = {
   title: "Ibeju-Lekki Local Government | Official Website",
@@ -242,6 +243,7 @@ export default function RootLayout({
 
         {/* ── PAGE CONTENT ───────────────────────────────────────────────── */}
         {children}
+        <BottomNav />
       </body>
     </html>
   );
