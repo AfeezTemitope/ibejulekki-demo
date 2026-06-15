@@ -3,7 +3,7 @@ import { homepageNewsQuery, quickServicesQuery, chairmanQuery } from '@/lib/quer
 import Hero             from '@/components/Hero'
 import QuickServices    from '@/components/QuickServices'
 import ChairmanSection  from '@/components/ChairmanSection'
-import Organogram       from '@/components/Organogram'
+// import Organogram       from '@/components/Organogram'
 import NewsSection      from '@/components/NewsSection'
 import SubscribeSection from '@/components/SubscribeSection'
 import Footer           from '@/components/Footer'
@@ -21,7 +21,7 @@ export default async function Home() {
       <Hero />
       <QuickServices   services={services  ?? undefined} />
       <ChairmanSection data={chairman      ?? undefined} />
-      <Organogram />
+      {/* <Organogram /> */}
       <NewsSection     posts={news         ?? undefined} />
       <SubscribeSection />
       <Footer />

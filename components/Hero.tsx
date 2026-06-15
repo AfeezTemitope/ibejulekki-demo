@@ -109,7 +109,7 @@ export default function Hero() {
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-[#F5A623] flex-shrink-0" />
                 <span className="text-[10px] font-semibold tracking-[0.22em] uppercase text-[#111111]">
-                  Official LGA Website · Lagos State
+                  Official LGA Website
                 </span>
               </div>
 
@@ -123,8 +123,8 @@ export default function Hero() {
                 `}
                 style={{ transitionDelay: '80ms' }}
               >
-                The Heart of<br />
-                <span className="text-[#111111]">New Lagos.</span>
+                Making Ibeju Lekki<br />
+                <span className="text-[#111111]">Great.</span>
               </h1>
 
               {/* Sub */}
@@ -138,7 +138,7 @@ export default function Hero() {
                 style={{ transitionDelay: '160ms' }}
               >
                 Home to the Dangote Refinery, Lekki Free Trade Zone, and Lekki
-                Deep Seaport — Ibeju-Lekki is Lagos State&apos;s fastest-growing
+                Deep Seaport Ibeju-Lekki is Lagos State&apos;s fastest-growing
                 local government area and Nigeria&apos;s new economic frontier.
               </p>
 

@@ -47,7 +47,7 @@ const NAV_ITEMS = [
       { label: 'Traditional Rulers',         href: '/about/traditional-rulers' },
     ],
   },
-  { label: 'Housing & Development', href: '/housing-development' },
+  { label: 'Housing & Tourism', href: '/housing-development' },
   { label: 'News & Events', href: '/news' },
   {
     label: 'Resources',
