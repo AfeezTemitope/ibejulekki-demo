@@ -109,7 +109,7 @@ export default function Hero() {
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-[#F5A623] flex-shrink-0" />
                 <span className="text-[10px] font-semibold tracking-[0.22em] uppercase text-[#111111]">
-                  Official LGA Website
+                  Official Local Govt. Website
                 </span>
               </div>
 
@@ -123,8 +123,8 @@ export default function Hero() {
                 `}
                 style={{ transitionDelay: '80ms' }}
               >
-                Making Ibeju Lekki<br />
-                <span className="text-[#111111]">Great.</span>
+                Making Ibeju <br />
+                <span className="text-[#111111]">Lekki Great.</span>
               </h1>
 
               {/* Sub */}
