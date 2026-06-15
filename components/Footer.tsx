@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react'
 import { FaXTwitter, FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa6'
+import BrandStripe from '@/components/BrandStripe';
 
 const FOOTER_NAV = [
   {
@@ -61,6 +62,7 @@ const SOCIALS = [
 export default function Footer() {
   return (
     <footer className="bg-[#0A0A0A] text-white/55">
+      <BrandStripe />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-14 sm:pt-16 pb-0">
 
         {/* Main grid */}

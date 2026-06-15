@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 import { ChevronDown, Phone, Mail, Clock, Circle, CreditCard } from 'lucide-react';
+import BrandStripe from '@/components/BrandStripe';
 
 const NAV_ITEMS = [
   { label: 'Home', href: '/' },
@@ -122,7 +123,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-[200] w-full">
-      <div className="h-1 w-full bg-[#F5A623]" />
+      <BrandStripe />
 
       {/* utility bar */}
       <div className="hidden md:block bg-[#111111] text-white">
