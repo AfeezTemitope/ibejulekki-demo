@@ -36,7 +36,7 @@ const FOOTER_NAV = [
     heading: 'Information',
     links: [
       { label: 'News & Events',       href: '/news' },
-      { label: 'Housing & Tourism', href: '/housing-development' },
+      { label: 'Housing & Tourism', href: '/housing-tourism' },
       { label: 'About Ibeju-Lekki',   href: '/about/history' },
       { label: 'Traditional Rulers',  href: '/about/traditional-rulers' },
       { label: 'Contact Us',          href: '/contact' },
