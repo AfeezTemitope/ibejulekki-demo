@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 import { ChevronDown, Phone, Mail, Clock, Circle, CreditCard } from 'lucide-react';
@@ -154,14 +153,15 @@ export default function Header() {
       <div className={`w-full bg-white transition-shadow duration-300 ${scrolled ? 'shadow-md' : 'shadow-sm'}`}>
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 lg:px-8 py-3">
           <Link href="/" className="flex items-center gap-3">
-            <Image
-              src="/logo.png"
-              alt="Ibeju-Lekki LGA"
-              width={46}
-              height={46}
-              className="h-11 w-11 object-contain"
-              priority
-            />
+            <span className="relative flex h-11 w-11 flex-shrink-0 items-center justify-center overflow-hidden rounded-md bg-[#F5A623] text-black">
+              <span className="text-[13px] font-extrabold tracking-tight">IL</span>
+              <img
+                src="/logo.png"
+                alt="Ibeju-Lekki LGA"
+                className="absolute inset-0 h-full w-full bg-white object-contain"
+                onError={(e) => { e.currentTarget.remove(); }}
+              />
+            </span>
             <span className="leading-tight">
               <span className="block text-[15px] sm:text-[17px] font-extrabold tracking-tight text-[#111111]">
                 Ibeju-Lekki <span className="text-[#B26B00]">LGA</span>

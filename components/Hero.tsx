@@ -356,8 +356,8 @@ export default function Hero() {
             text-[9.5px] font-bold uppercase tracking-[0.22em]
           ">
             <span className="w-1.5 h-1.5 rounded-full bg-[#F5A623]" aria-hidden="true" />
-            <span className="hidden sm:inline py-3">The New Lagos</span>
-            <span className="sm:hidden py-3">New Lagos</span>
+            <span className="hidden sm:inline py-3">The New Lagos.</span>
+            <span className="sm:hidden py-3">The New Lagos.</span>
           </div>
 
           {/* Scrolling text */}
