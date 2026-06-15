@@ -20,16 +20,16 @@ export default function SubscribeSection() {
   }
 
   return (
-    <section className="bg-[#0A1F14] py-16 sm:py-20 border-t border-white/05" aria-labelledby="subscribe-heading">
+    <section className="bg-[#111111] py-16 sm:py-20 border-t border-white/05" aria-labelledby="subscribe-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <span className="h-px w-8 bg-[#C89B3C]" aria-hidden="true" />
-              <span className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-[#C89B3C]/70">Stay Connected</span>
+              <span className="h-px w-8 bg-[#F5A623]" aria-hidden="true" />
+              <span className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-[#F5A623]/70">Stay Connected</span>
             </div>
             <h2 id="subscribe-heading" className="text-[clamp(1.7rem,3.5vw,2.4rem)] font-extrabold text-white leading-[1.1] tracking-tight mb-4">
-              Council updates,<br /><span className="text-[#C89B3C]">delivered to you.</span>
+              Council updates,<br /><span className="text-[#F5A623]">delivered to you.</span>
             </h2>
             <p className="text-[14px] text-white/50 leading-[1.8] max-w-[420px]">
               Subscribe for news, emergency alerts, and community programmes. Push notifications — no app needed.
@@ -48,17 +48,17 @@ export default function SubscribeSection() {
                   <div className="relative flex-1">
                     <Mail size={15} strokeWidth={2} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 pointer-events-none" />
                     <input id="sub-email" type="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="your@email.com" required
-                      className="w-full pl-10 pr-4 py-3.5 rounded-full bg-white/06 border border-white/12 text-white text-[13px] placeholder:text-white/30 focus:outline-none focus:border-[#C89B3C]/60 transition-colors font-medium"
+                      className="w-full pl-10 pr-4 py-3.5 rounded-full bg-white/06 border border-white/12 text-white text-[13px] placeholder:text-white/30 focus:outline-none focus:border-[#F5A623]/60 transition-colors font-medium"
                     />
                   </div>
-                  <button type="submit" className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3.5 bg-[#C89B3C] text-[#0A1F14] text-[13px] font-bold rounded-full hover:bg-[#d4a94a] active:scale-95 transition-all duration-200">
+                  <button type="submit" className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3.5 bg-[#F5A623] text-black text-[13px] font-bold rounded-full hover:bg-[#E08E0B] active:scale-95 transition-all duration-200">
                     Subscribe <ArrowRight size={14} strokeWidth={2.5} />
                   </button>
                 </div>
               </form>
             ) : (
-              <div className="flex items-center gap-3 bg-[#C89B3C]/10 border border-[#C89B3C]/25 rounded-2xl px-5 py-4 mb-4">
-                <CheckCircle2 size={20} className="text-[#C89B3C] flex-shrink-0" strokeWidth={2} />
+              <div className="flex items-center gap-3 bg-[#F5A623]/10 border border-[#F5A623]/25 rounded-2xl px-5 py-4 mb-4">
+                <CheckCircle2 size={20} className="text-[#F5A623] flex-shrink-0" strokeWidth={2} />
                 <div>
                   <div className="text-[13px] font-bold text-white mb-0.5">You&apos;re subscribed</div>
                   <div className="text-[11.5px] text-white/50">You&apos;ll receive updates at {email}</div>
@@ -66,7 +66,7 @@ export default function SubscribeSection() {
               </div>
             )}
             <button onClick={handlePush} disabled={pushGranted}
-              className={`w-full flex items-center justify-center gap-2.5 py-3.5 border rounded-full text-[13px] font-semibold transition-all duration-200 active:scale-95 ${pushGranted ? 'border-[#C89B3C]/30 text-[#C89B3C] cursor-default' : 'border-white/12 text-white/60 hover:border-white/30 hover:text-white'}`}
+              className={`w-full flex items-center justify-center gap-2.5 py-3.5 border rounded-full text-[13px] font-semibold transition-all duration-200 active:scale-95 ${pushGranted ? 'border-[#F5A623]/30 text-[#F5A623] cursor-default' : 'border-white/12 text-white/60 hover:border-white/30 hover:text-white'}`}
             >
               <Bell size={15} strokeWidth={2} />
               {pushGranted ? 'Push notifications enabled' : 'Enable Push Notifications'}

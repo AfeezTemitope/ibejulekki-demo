@@ -125,7 +125,7 @@ export default async function NewsPost({ params }: { params: { slug: string } })
       <main className="min-h-screen bg-white">
 
         {/* Hero banner */}
-        <div className="bg-gradient-to-br from-[#0F3D2E] to-[#1B5E3F] py-14 sm:py-20">
+        <div className="bg-[#111111] py-14 sm:py-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-10">
             <Link
               href="/news"
@@ -134,7 +134,7 @@ export default async function NewsPost({ params }: { params: { slug: string } })
               <ArrowLeft size={14} strokeWidth={2} /> Back to News
             </Link>
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-[10px] font-bold uppercase tracking-[0.18em] bg-[#C89B3C] text-[#0A1F14] px-3 py-1 rounded-full">
+              <span className="text-[10px] font-bold uppercase tracking-[0.18em] bg-[#F5A623] text-black px-3 py-1 rounded-full">
                 {CATEGORY_LABELS[post.category] ?? post.category}
               </span>
             </div>
@@ -159,28 +159,28 @@ export default async function NewsPost({ params }: { params: { slug: string } })
         {/* Article body */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-16">
 
-          <p className="text-[16px] sm:text-[17px] text-[#0A1F14]/70 leading-[1.8] font-medium border-l-[3px] border-[#C89B3C] pl-5 mb-10">
+          <p className="text-[16px] sm:text-[17px] text-[#111111]/70 leading-[1.8] font-medium border-l-[3px] border-[#F5A623] pl-5 mb-10">
             {post.summary}
           </p>
 
           {post.body ? (
-            <div className="prose prose-lg max-w-none text-[#0A1F14]/75">
-              <p className="text-[14px] text-[#0A1F14]/45 italic">Full article content loading...</p>
+            <div className="prose prose-lg max-w-none text-[#111111]/75">
+              <p className="text-[14px] text-[#111111]/45 italic">Full article content loading...</p>
             </div>
           ) : (
-            <div className="bg-[#FAFAF8] border border-[#0F3D2E]/08 rounded-2xl p-8 text-center">
-              <div className="text-[13px] text-[#0A1F14]/40 mb-2">Full article content</div>
-              <div className="text-[12px] text-[#0A1F14]/30">
+            <div className="bg-[#FAFAFA] border border-[#111111]/08 rounded-2xl p-8 text-center">
+              <div className="text-[13px] text-[#111111]/40 mb-2">Full article content</div>
+              <div className="text-[12px] text-[#111111]/30">
                 The complete article will appear here once published in the CMS.
               </div>
             </div>
           )}
 
           {/* Footer actions */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-12 pt-8 border-t border-[#0F3D2E]/08">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-12 pt-8 border-t border-[#111111]/08">
             <Link
               href="/news"
-              className="inline-flex items-center gap-2 text-[12.5px] font-bold text-[#0F3D2E] hover:text-[#C89B3C] transition-colors"
+              className="inline-flex items-center gap-2 text-[12.5px] font-bold text-[#111111] hover:text-[#B26B00] transition-colors"
             >
               <ArrowLeft size={14} strokeWidth={2.5} /> All News & Events
             </Link>

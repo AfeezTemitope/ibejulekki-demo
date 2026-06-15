@@ -34,7 +34,7 @@ export default function RootLayout({
             __html: `
           #boot-loader {
             position: fixed; inset: 0; z-index: 99999;
-            background: #0A1F14; color: #FAF7F0;
+            background: #111111; color: #FAF7F0;
             display: flex; align-items: center; justify-content: center;
             font-family: Georgia, serif;
             padding: 2rem;
@@ -44,14 +44,14 @@ export default function RootLayout({
           .boot-wrap { max-width: 900px; width: 100%; text-align: center; }
           .boot-eyebrow {
             font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
-            color: #C89B3C; margin-bottom: 1rem; font-family: system-ui, sans-serif;
+            color: #F5A623; margin-bottom: 1rem; font-family: system-ui, sans-serif;
           }
           .boot-title {
             font-size: clamp(2rem, 7vw, 4.5rem);
             font-weight: 600; line-height: 1.05; margin-bottom: 0.75rem;
             letter-spacing: -0.02em;
           }
-          .boot-title em { font-style: italic; color: #C89B3C; }
+          .boot-title em { font-style: italic; color: #F5A623; }
           .boot-chairman {
             font-size: clamp(0.85rem, 2vw, 1.05rem); color: rgba(250,247,240,0.65);
             margin-bottom: 2.5rem; font-family: system-ui, sans-serif;
@@ -63,20 +63,20 @@ export default function RootLayout({
           .boot-letter {
             width: clamp(42px, 9vw, 70px);
             height: clamp(42px, 9vw, 70px);
-            border: 1.5px solid rgba(200,155,60,0.25);
+            border: 1.5px solid rgba(245,166,35,0.25);
             border-radius: 12px;
             display: flex; align-items: center; justify-content: center;
             font-size: clamp(1.5rem, 4vw, 2.5rem);
-            font-weight: 700; color: rgba(200,155,60,0.5);
+            font-weight: 700; color: rgba(245,166,35,0.5);
             opacity: 0; animation: bootPop 0.5s ease-out forwards;
             transition: all 0.5s ease;
           }
           .boot-letter.active {
-            color: #0A1F14;
-            background: #C89B3C;
-            border-color: #C89B3C;
+            color: #111111;
+            background: #F5A623;
+            border-color: #F5A623;
             transform: scale(1.1);
-            box-shadow: 0 0 30px rgba(200,155,60,0.5);
+            box-shadow: 0 0 30px rgba(245,166,35,0.5);
           }
           .boot-letter:nth-child(1) { animation-delay: 0.05s; }
           .boot-letter:nth-child(2) { animation-delay: 0.15s; }
@@ -97,7 +97,7 @@ export default function RootLayout({
           }
           .boot-pillar-name {
             font-size: clamp(1rem, 2.5vw, 1.3rem);
-            color: #C89B3C; letter-spacing: 0.15em;
+            color: #F5A623; letter-spacing: 0.15em;
             text-transform: uppercase; font-weight: 600;
             margin-bottom: 0.5rem;
             opacity: 0; animation: fadeSlide 0.6s ease-out forwards;
@@ -117,7 +117,7 @@ export default function RootLayout({
             background: rgba(250,247,240,0.1); border-radius: 2px; overflow: hidden;
           }
           .boot-bar {
-            height: 100%; background: #C89B3C;
+            height: 100%; background: #F5A623;
             animation: bootBar 2.5s ease-in-out infinite;
           }
           @keyframes bootBar {

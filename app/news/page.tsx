@@ -108,10 +108,10 @@ const CATEGORY_LABELS: Record<string, string> = {
 }
 
 const CATEGORY_COLORS: Record<string, string> = {
-  governance:     'bg-[#0F3D2E] text-white',
+  governance:     'bg-[#111111] text-white',
   infrastructure: 'bg-[#1A3A7A] text-white',
   health:         'bg-emerald-700 text-white',
-  education:      'bg-[#C89B3C] text-[#0A1F14]',
+  education:      'bg-[#F5A623] text-black',
   environment:    'bg-green-700 text-white',
   economy:        'bg-amber-600 text-white',
   security:       'bg-[#BE1E2D] text-white',
@@ -134,22 +134,22 @@ export default async function NewsPage() {
       <main className="min-h-screen bg-white">
 
         {/* Page header */}
-        <div className="border-b border-[#0F3D2E]/08 bg-[#FAFAF8]">
+        <div className="border-b border-[#111111]/08 bg-[#FAFAFA]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-10 sm:py-14">
             <div className="flex items-center gap-3 mb-3">
-              <span className="h-px w-8 bg-[#C89B3C]" aria-hidden="true" />
-              <span className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-[#0A1F14]/45">Newsroom</span>
+              <span className="h-px w-8 bg-[#F5A623]" aria-hidden="true" />
+              <span className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-[#111111]/45">Newsroom</span>
             </div>
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-              <h1 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-[#0A1F14] tracking-tight leading-tight">
+              <h1 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-[#111111] tracking-tight leading-tight">
                 News &amp; Events
               </h1>
               <div className="relative max-w-xs w-full">
-                <Search size={14} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#0A1F14]/35" strokeWidth={2} />
+                <Search size={14} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#111111]/35" strokeWidth={2} />
                 <input
                   type="search"
                   placeholder="Search articles..."
-                  className="w-full pl-9 pr-4 py-2.5 text-[13px] border border-[#0F3D2E]/15 rounded-full focus:outline-none focus:border-[#C89B3C]/50 transition-colors"
+                  className="w-full pl-9 pr-4 py-2.5 text-[13px] border border-[#111111]/15 rounded-full focus:outline-none focus:border-[#F5A623]/50 transition-colors"
                 />
               </div>
             </div>
@@ -160,31 +160,31 @@ export default async function NewsPage() {
 
           {/* Featured */}
           <div className="mb-12">
-            <div className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-[#0A1F14]/35 mb-5">Featured Story</div>
+            <div className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-[#111111]/35 mb-5">Featured Story</div>
             <Link
               href={`/news/${featured.slug.current}`}
-              className="group grid grid-cols-1 lg:grid-cols-[3fr_2fr] border border-[#0F3D2E]/10 rounded-2xl overflow-hidden hover:border-[#C89B3C]/40 hover:shadow-lg transition-all duration-200"
+              className="group grid grid-cols-1 lg:grid-cols-[3fr_2fr] border border-[#111111]/10 rounded-2xl overflow-hidden hover:border-[#F5A623]/40 hover:shadow-lg transition-all duration-200"
             >
-              <div className="relative aspect-[16/9] lg:aspect-auto lg:min-h-[280px] bg-gradient-to-br from-[#0F3D2E] to-[#1B5E3F] flex items-center justify-center overflow-hidden">
-                <span className="text-[clamp(4rem,10vw,7rem)] font-extrabold text-white/05 italic tracking-tighter select-none">
+              <div className="relative aspect-[16/9] lg:aspect-auto lg:min-h-[280px] bg-gradient-to-br from-[#F5A623] to-[#E08E0B] flex items-center justify-center overflow-hidden">
+                <span className="text-[clamp(4rem,10vw,7rem)] font-extrabold text-black/10 italic tracking-tighter select-none">
                   {CATEGORY_LABELS[featured.category] ?? featured.category}
                 </span>
-                <span className={`absolute top-4 left-4 text-[10px] font-bold uppercase tracking-[0.12em] px-3 py-1 rounded-full ${CATEGORY_COLORS[featured.category] ?? 'bg-[#C89B3C] text-[#0A1F14]'}`}>
+                <span className={`absolute top-4 left-4 text-[10px] font-bold uppercase tracking-[0.12em] px-3 py-1 rounded-full ${CATEGORY_COLORS[featured.category] ?? 'bg-[#F5A623] text-black'}`}>
                   Featured
                 </span>
               </div>
               <div className="p-6 sm:p-8 flex flex-col justify-center">
-                <div className="flex items-center gap-2 text-[10.5px] text-[#0A1F14]/40 mb-3">
+                <div className="flex items-center gap-2 text-[10.5px] text-[#111111]/40 mb-3">
                   <Calendar size={11} strokeWidth={2} />
                   {formatDate(featured.publishedAt)}
                 </div>
-                <h2 className="text-[clamp(1.1rem,2.5vw,1.5rem)] font-bold text-[#0A1F14] leading-[1.3] mb-3 group-hover:text-[#0F3D2E] transition-colors">
+                <h2 className="text-[clamp(1.1rem,2.5vw,1.5rem)] font-bold text-[#111111] leading-[1.3] mb-3 group-hover:text-[#B26B00] transition-colors">
                   {featured.title}
                 </h2>
-                <p className="text-[13.5px] text-[#0A1F14]/55 leading-[1.75] mb-5 line-clamp-3">
+                <p className="text-[13.5px] text-[#111111]/55 leading-[1.75] mb-5 line-clamp-3">
                   {featured.summary}
                 </p>
-                <div className="inline-flex items-center gap-1.5 text-[12.5px] font-bold text-[#0F3D2E] group-hover:text-[#C89B3C] transition-colors">
+                <div className="inline-flex items-center gap-1.5 text-[12.5px] font-bold text-[#111111] group-hover:text-[#B26B00] transition-colors">
                   Read full article <ArrowRight size={13} strokeWidth={2.5} />
                 </div>
               </div>
@@ -193,7 +193,7 @@ export default async function NewsPage() {
 
           {/* All articles */}
           <div>
-            <div className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-[#0A1F14]/35 mb-5">
+            <div className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-[#111111]/35 mb-5">
               All Articles ({rest.length})
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -201,26 +201,26 @@ export default async function NewsPage() {
                 <Link
                   key={post._id}
                   href={`/news/${post.slug.current}`}
-                  className="group flex flex-col border border-[#0F3D2E]/10 rounded-2xl overflow-hidden hover:border-[#C89B3C]/40 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                  className="group flex flex-col border border-[#111111]/10 rounded-2xl overflow-hidden hover:border-[#F5A623]/40 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
                 >
-                  <div className="relative aspect-[16/9] bg-gradient-to-br from-[#0F3D2E]/08 to-[#C89B3C]/10 flex items-center justify-center overflow-hidden">
-                    <Tag size={28} strokeWidth={1} className="text-[#0F3D2E]/20" />
-                    <span className={`absolute top-3 left-3 text-[9.5px] font-bold uppercase tracking-[0.12em] px-2.5 py-1 rounded-full ${CATEGORY_COLORS[post.category] ?? 'bg-[#0F3D2E] text-white'}`}>
+                  <div className="relative aspect-[16/9] bg-gradient-to-br from-[#F5A623]/12 to-[#F5A623]/10 flex items-center justify-center overflow-hidden">
+                    <Tag size={28} strokeWidth={1} className="text-[#111111]/20" />
+                    <span className={`absolute top-3 left-3 text-[9.5px] font-bold uppercase tracking-[0.12em] px-2.5 py-1 rounded-full ${CATEGORY_COLORS[post.category] ?? 'bg-[#111111] text-white'}`}>
                       {CATEGORY_LABELS[post.category] ?? post.category}
                     </span>
                   </div>
                   <div className="flex flex-col flex-1 p-5">
-                    <div className="flex items-center gap-1.5 text-[10px] text-[#0A1F14]/40 mb-2.5">
+                    <div className="flex items-center gap-1.5 text-[10px] text-[#111111]/40 mb-2.5">
                       <Calendar size={10} strokeWidth={2} />
                       {formatDate(post.publishedAt)}
                     </div>
-                    <h3 className="text-[13.5px] font-bold text-[#0A1F14] leading-[1.4] mb-2 line-clamp-2 group-hover:text-[#0F3D2E] transition-colors flex-1">
+                    <h3 className="text-[13.5px] font-bold text-[#111111] leading-[1.4] mb-2 line-clamp-2 group-hover:text-[#B26B00] transition-colors flex-1">
                       {post.title}
                     </h3>
-                    <p className="text-[12px] text-[#0A1F14]/50 leading-[1.65] line-clamp-2 mb-4">
+                    <p className="text-[12px] text-[#111111]/50 leading-[1.65] line-clamp-2 mb-4">
                       {post.summary}
                     </p>
-                    <div className="inline-flex items-center gap-1 text-[11.5px] font-bold text-[#0F3D2E] group-hover:text-[#C89B3C] transition-colors mt-auto">
+                    <div className="inline-flex items-center gap-1 text-[11.5px] font-bold text-[#111111] group-hover:text-[#B26B00] transition-colors mt-auto">
                       Read more <ArrowRight size={12} strokeWidth={2.5} />
                     </div>
                   </div>

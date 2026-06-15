@@ -6,8 +6,8 @@
 /* Poppins loaded via layout.tsx head link tag      */
 
 body {
-  background: #FAF7F0;
-  color: #0A1F14;
+  background: #FFFFFF;
+  color: #111111;
   font-family: 'Poppins', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }

@@ -19,7 +19,7 @@ const FOOTER_NAV = [
       { label: 'SHIEELD Agenda',      href: '/programmes/shieeld' },
       { label: 'Agenda 2029',         href: '/programmes/agenda-2029' },
       { label: '2025 Budget',         href: '/programmes/budget' },
-      { label: 'Programme Delivery',  href: '/programmes/delivery' },
+      { label: 'Performance Report',  href: '/programmes/performance-report' },
     ],
   },
   {
@@ -36,9 +36,9 @@ const FOOTER_NAV = [
     heading: 'Information',
     links: [
       { label: 'News & Events',       href: '/news' },
+      { label: 'Housing & Development', href: '/housing-development' },
       { label: 'About Ibeju-Lekki',   href: '/about/history' },
       { label: 'Traditional Rulers',  href: '/about/traditional-rulers' },
-      { label: 'Arts & Culture',      href: '/about/culture' },
       { label: 'Contact Us',          href: '/contact' },
     ],
   },
@@ -60,11 +60,11 @@ const SOCIALS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#060F09] text-white/45">
+    <footer className="bg-[#0A0A0A] text-white/55">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-14 sm:pt-16 pb-0">
 
         {/* Main grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-10 pb-12 border-b border-white/05">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-10 pb-12 border-b border-white/08">
 
           {/* Brand column */}
           <div className="sm:col-span-2 lg:col-span-1">
@@ -73,8 +73,8 @@ export default function Footer() {
                 <Image src="/ibeju-lekki-logo-sm.webp" alt="Ibeju-Lekki LGA" fill className="object-contain" />
               </div>
               <div>
-                <div className="text-[14px] font-bold text-white/90 leading-tight">Ibeju-Lekki LGA</div>
-                <div className="text-[9px] uppercase tracking-[0.2em] text-white/35">Official Government Website</div>
+                <div className="text-[14px] font-bold text-white leading-tight">Ibeju-Lekki LGA</div>
+                <div className="text-[9px] uppercase tracking-[0.2em] text-white/45">Official Government Website</div>
               </div>
             </Link>
 
@@ -84,15 +84,15 @@ export default function Footer() {
 
             <div className="space-y-2.5 text-[12px] mb-6">
               <div className="flex items-start gap-2.5">
-                <MapPin size={13} strokeWidth={1.8} className="text-[#C89B3C] mt-0.5 flex-shrink-0" />
+                <MapPin size={13} strokeWidth={1.8} className="text-[#F5A623] mt-0.5 flex-shrink-0" />
                 <span className="leading-snug whitespace-pre-line">{SETTINGS.address}</span>
               </div>
               <a href={`tel:${SETTINGS.phone}`} className="flex items-center gap-2.5 hover:text-white transition-colors">
-                <Phone size={13} strokeWidth={1.8} className="text-[#C89B3C] flex-shrink-0" />
+                <Phone size={13} strokeWidth={1.8} className="text-[#F5A623] flex-shrink-0" />
                 {SETTINGS.phone}
               </a>
-              <a href={`mailto:${SETTINGS.email}`} className="flex items-center gap-2.5 hover:text-[#C89B3C] transition-colors">
-                <Mail size={13} strokeWidth={1.8} className="text-[#C89B3C] flex-shrink-0" />
+              <a href={`mailto:${SETTINGS.email}`} className="flex items-center gap-2.5 hover:text-[#F5A623] transition-colors">
+                <Mail size={13} strokeWidth={1.8} className="text-[#F5A623] flex-shrink-0" />
                 {SETTINGS.email}
               </a>
             </div>
@@ -106,7 +106,7 @@ export default function Footer() {
                   aria-label={label}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full bg-white/06 flex items-center justify-center hover:bg-[#C89B3C] hover:text-[#0A1F14] transition-all duration-200"
+                  className="w-8 h-8 rounded-full bg-white/08 flex items-center justify-center hover:bg-[#F5A623] hover:text-black transition-all duration-200"
                 >
                   <Icon size={14} />
                 </a>
@@ -117,7 +117,7 @@ export default function Footer() {
           {/* Nav columns */}
           {FOOTER_NAV.map((col) => (
             <div key={col.heading}>
-              <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#C89B3C] mb-4">
+              <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#F5A623] mb-4">
                 {col.heading}
               </div>
               <ul className="space-y-2.5">
@@ -150,7 +150,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Color stripe */}
+      {/* Color stripe (official Lagos motif) */}
       <div className="flex h-[5px]" aria-hidden="true">
         <div className="flex-1 bg-[#BE1E2D]" />
         <div className="flex-1 bg-[#1A3A7A]" />

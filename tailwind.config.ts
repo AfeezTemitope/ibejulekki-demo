@@ -12,13 +12,18 @@ const config: Config = {
         sans: ['Poppins', 'system-ui', 'sans-serif'],
       },
       colors: {
-        forest: '#0F3D2E',
-        moss:   '#1B5E3F',
-        ink:    '#0A1F14',
-        gold:   '#C89B3C',
-        red:    '#BE1E2D',
-        bone:   '#FAF7F0',
-        cream:  '#EDE8DC',
+        // ── Official Ibeju-Lekki palette ──────────────────────────────
+        yellow: '#F5A623',  // primary highlight / fills (black text on top)
+        amber:  '#B26B00',  // readable yellow text on white; hovers
+        black:  '#111111',  // body text + dark sections
+        ink:    '#111111',  // alias
+        red:    '#BE1E2D',  // touch of red (alerts, emergencies)
+        bone:   '#FFFFFF',  // page background
+        cream:  '#FAFAFA',  // subtle alternating section background
+        // legacy names remapped so any stray usage stays on-brand
+        forest: '#F5A623',
+        moss:   '#E08E0B',
+        gold:   '#F5A623',
       },
     },
   },

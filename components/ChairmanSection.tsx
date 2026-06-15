@@ -21,45 +21,45 @@ interface Props {
 
 export default function ChairmanSection({ data = PLACEHOLDER }: Props) {
   return (
-    <section className="bg-[#FAFAF8] py-16 sm:py-20 lg:py-24 border-t border-[#0F3D2E]/06" aria-labelledby="chairman-heading">
+    <section className="bg-[#FAFAFA] py-16 sm:py-20 lg:py-24 border-t border-[#111111]/06" aria-labelledby="chairman-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="relative">
-            <div className="relative aspect-[4/5] max-w-[420px] mx-auto lg:mx-0 rounded-3xl overflow-hidden border border-[#0F3D2E]/10 shadow-lg shadow-[#0F3D2E]/06">
+            <div className="relative aspect-[4/5] max-w-[420px] mx-auto lg:mx-0 rounded-3xl overflow-hidden border border-[#111111]/10 shadow-lg shadow-[#111111]/06">
               <Image src="/chairman.webp" alt={`${data.name} — ${data.title}`} fill className="object-cover object-[center_12%]" sizes="(max-width:1024px) 90vw, 420px" />
-              <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-[#0A1F14]/80 via-[#0A1F14]/40 to-transparent">
-                <div className="text-[9.5px] font-bold uppercase tracking-[0.24em] text-[#C89B3C] mb-1">Executive Chairman</div>
+              <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-[#111111]/80 via-[#111111]/40 to-transparent">
+                <div className="text-[9.5px] font-bold uppercase tracking-[0.24em] text-[#B26B00] mb-1">Executive Chairman</div>
                 <div className="text-[17px] font-bold text-white leading-tight">{data.name}</div>
               </div>
             </div>
-            <div className="hidden lg:block absolute -bottom-6 -left-6 w-24 h-24 border-b-2 border-l-2 border-[#C89B3C]/30 rounded-bl-2xl pointer-events-none" aria-hidden="true" />
+            <div className="hidden lg:block absolute -bottom-6 -left-6 w-24 h-24 border-b-2 border-l-2 border-[#F5A623]/30 rounded-bl-2xl pointer-events-none" aria-hidden="true" />
           </div>
           <div>
             <div className="flex items-center gap-3 mb-5">
-              <span className="h-px w-8 bg-[#C89B3C]" aria-hidden="true" />
-              <span className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-[#0A1F14]/45">Office of the Executive Chairman</span>
+              <span className="h-px w-8 bg-[#F5A623]" aria-hidden="true" />
+              <span className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-[#111111]/45">Office of the Executive Chairman</span>
             </div>
             <div className="relative mb-7">
-              <Quote size={32} strokeWidth={1} className="text-[#C89B3C]/20 absolute -top-2 -left-1" aria-hidden="true" />
-              <blockquote id="chairman-heading" className="text-[clamp(1.3rem,2.8vw,1.85rem)] font-extrabold text-[#0A1F14] leading-[1.2] tracking-tight pl-4 border-l-[3px] border-[#C89B3C]">
+              <Quote size={32} strokeWidth={1} className="text-[#B26B00]/20 absolute -top-2 -left-1" aria-hidden="true" />
+              <blockquote id="chairman-heading" className="text-[clamp(1.3rem,2.8vw,1.85rem)] font-extrabold text-[#111111] leading-[1.2] tracking-tight pl-4 border-l-[3px] border-[#F5A623]">
                 &ldquo;{data.pullQuote}&rdquo;
               </blockquote>
             </div>
-            <p className="text-[14px] text-[#0A1F14]/55 leading-[1.8] mb-10 max-w-[480px]">
+            <p className="text-[14px] text-[#111111]/55 leading-[1.8] mb-10 max-w-[480px]">
               Hon. Abdullahi Sesan Olowa leads Ibeju-Lekki Local Government with a clear blueprint — the SHIEELD Agenda — translating policy into visible, measurable change across all communities and wards.
             </p>
             {data.stats && (
               <div className="grid grid-cols-2 gap-x-6 gap-y-5 mb-10">
                 {data.stats.map((s) => (
-                  <div key={s.label} className="border-t-2 border-[#0F3D2E]/10 pt-4">
-                    <div className="text-[clamp(1.3rem,2.5vw,1.75rem)] font-extrabold text-[#C89B3C] leading-none mb-1 tracking-tight">{s.value}</div>
-                    <div className="text-[12.5px] font-bold text-[#0A1F14] mb-0.5">{s.label}</div>
-                    <div className="text-[11px] text-[#0A1F14]/40">{s.detail}</div>
+                  <div key={s.label} className="border-t-2 border-[#111111]/10 pt-4">
+                    <div className="text-[clamp(1.3rem,2.5vw,1.75rem)] font-extrabold text-[#B26B00] leading-none mb-1 tracking-tight">{s.value}</div>
+                    <div className="text-[12.5px] font-bold text-[#111111] mb-0.5">{s.label}</div>
+                    <div className="text-[11px] text-[#111111]/40">{s.detail}</div>
                   </div>
                 ))}
               </div>
             )}
-            <Link href="/government/chairman" className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#0F3D2E] text-white text-[13px] font-bold tracking-[0.04em] rounded-full hover:bg-[#C89B3C] hover:text-[#0A1F14] transition-all duration-200">
+            <Link href="/government/chairman" className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#F5A623] text-black text-[13px] font-bold tracking-[0.04em] rounded-full hover:bg-[#111111] hover:text-[#F5A623] transition-all duration-200">
               Read Full Message <ArrowRight size={15} strokeWidth={2.5} />
             </Link>
           </div>

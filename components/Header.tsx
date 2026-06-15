@@ -34,7 +34,7 @@ const NAV_ITEMS = [
     children: [
       { label: 'SHIEELD Agenda',      href: '/programmes/shieeld' },
       { label: '2025 Budget Summary', href: '/programmes/budget' },
-      { label: 'Programme Delivery',  href: '/programmes/delivery' },
+      { label: 'Performance Report',  href: '/programmes/performance-report' },
       { label: 'Agenda 2029',         href: '/programmes/agenda-2029' },
     ],
   },
@@ -47,6 +47,7 @@ const NAV_ITEMS = [
       { label: 'Traditional Rulers',         href: '/about/traditional-rulers' },
     ],
   },
+  { label: 'Housing & Development', href: '/housing-development' },
   { label: 'News & Events', href: '/news' },
   {
     label: 'Resources',
@@ -77,10 +78,10 @@ function DesktopNavItem({ item }: { item: (typeof NAV_ITEMS)[number] }) {
       <Link
         href={item.href}
         className="
-          relative text-[11.5px] font-semibold tracking-[0.1em] uppercase
-          text-[#0A1F14]/75 hover:text-[#0F3D2E] transition-colors duration-150
+          relative whitespace-nowrap text-[11.5px] font-semibold tracking-[0.1em] uppercase
+          text-[#111111]/75 hover:text-[#111111] transition-colors duration-150
           after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0
-          after:bg-[#C89B3C] after:rounded-full after:transition-all after:duration-250
+          after:bg-[#F5A623] after:rounded-full after:transition-all after:duration-250
           hover:after:w-full
         "
       >
@@ -99,8 +100,8 @@ function DesktopNavItem({ item }: { item: (typeof NAV_ITEMS)[number] }) {
       <button
         onClick={() => setOpen((o) => !o)}
         className="
-          flex items-center gap-1 text-[11.5px] font-semibold tracking-[0.1em]
-          uppercase text-[#0A1F14]/75 hover:text-[#0F3D2E] transition-colors
+          flex items-center gap-1 whitespace-nowrap text-[11.5px] font-semibold tracking-[0.1em]
+          uppercase text-[#111111]/75 hover:text-[#111111] transition-colors
           duration-150 cursor-pointer select-none
         "
         aria-expanded={open}
@@ -114,33 +115,34 @@ function DesktopNavItem({ item }: { item: (typeof NAV_ITEMS)[number] }) {
         />
       </button>
 
-      {/* Dropdown */}
+      {/* Dropdown — outer wrapper starts flush under the button (top-full) with a
+          transparent pt-3 "bridge" so moving the cursor down never crosses a dead
+          gap. The visible card is the inner div. */}
       <div
         className={`
-          absolute top-[calc(100%+14px)] left-1/2 -translate-x-1/2
-          min-w-[220px] bg-white border border-[#0F3D2E]/10
-          border-t-[3px] border-t-[#C89B3C]
-          rounded-b-xl shadow-xl shadow-black/10 z-50 overflow-hidden
+          absolute top-full left-1/2 -translate-x-1/2 pt-3 min-w-[220px] z-50
           transition-all duration-200 origin-top
           ${open ? 'opacity-100 scale-y-100 pointer-events-auto' : 'opacity-0 scale-y-95 pointer-events-none'}
         `}
       >
-        {item.children.map((child) => (
-          <Link
-            key={child.href}
-            href={child.href}
-            onClick={() => setOpen(false)}
-            className="
-              flex items-center gap-2.5 px-5 py-3 text-[12px] font-medium
-              text-[#0A1F14]/70 border-b border-[#0F3D2E]/06 last:border-0
-              hover:bg-[#0F3D2E]/04 hover:text-[#0F3D2E] hover:pl-6
-              transition-all duration-150
-            "
-          >
-            <span className="w-1 h-1 rounded-full bg-[#C89B3C] flex-shrink-0" />
-            {child.label}
-          </Link>
-        ))}
+        <div className="bg-white border border-black/10 border-t-[3px] border-t-[#F5A623] rounded-xl shadow-xl shadow-black/10 overflow-hidden">
+          {item.children.map((child) => (
+            <Link
+              key={child.href}
+              href={child.href}
+              onClick={() => setOpen(false)}
+              className="
+                flex items-center gap-2.5 px-5 py-3 text-[12px] font-medium
+                text-[#111111]/70 border-b border-black/06 last:border-0
+                hover:bg-[#F5A623]/12 hover:text-[#111111] hover:pl-6
+                transition-all duration-150
+              "
+            >
+              <span className="w-1 h-1 rounded-full bg-[#F5A623] flex-shrink-0" />
+              {child.label}
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -163,8 +165,8 @@ function MobileNavItem({
         onClick={onClose}
         className="
           block px-5 py-4 text-[13px] font-semibold tracking-[0.08em]
-          uppercase text-[#0A1F14] border-b border-[#0F3D2E]/08
-          hover:text-[#0F3D2E] hover:bg-[#0F3D2E]/03 transition-colors
+          uppercase text-[#111111] border-b border-black/08
+          hover:text-[#111111] hover:bg-[#F5A623]/10 transition-colors
         "
       >
         {item.label}
@@ -173,13 +175,13 @@ function MobileNavItem({
   }
 
   return (
-    <div className="border-b border-[#0F3D2E]/08">
+    <div className="border-b border-black/08">
       <button
         onClick={() => setOpen((o) => !o)}
         className="
           flex items-center justify-between w-full px-5 py-4
           text-[13px] font-semibold tracking-[0.08em] uppercase
-          text-[#0A1F14] hover:text-[#0F3D2E] transition-colors
+          text-[#111111] hover:text-[#111111] transition-colors
         "
         aria-expanded={open}
       >
@@ -187,7 +189,7 @@ function MobileNavItem({
         <ChevronDown
           size={14}
           strokeWidth={2.5}
-          className={`transition-transform duration-250 text-[#0F3D2E]/50 ${open ? 'rotate-180' : ''}`}
+          className={`transition-transform duration-250 text-black/50 ${open ? 'rotate-180' : ''}`}
         />
       </button>
 
@@ -203,11 +205,11 @@ function MobileNavItem({
             onClick={onClose}
             className="
               flex items-center gap-2.5 px-8 py-3 text-[12.5px] font-medium
-              text-[#0A1F14]/60 hover:text-[#0F3D2E] hover:bg-[#0F3D2E]/04
-              border-b border-[#0F3D2E]/04 last:border-0 transition-all
+              text-[#111111]/60 hover:text-[#111111] hover:bg-[#F5A623]/10
+              border-b border-black/04 last:border-0 transition-all
             "
           >
-            <span className="w-1 h-1 rounded-full bg-[#C89B3C] flex-shrink-0" />
+            <span className="w-1 h-1 rounded-full bg-[#F5A623] flex-shrink-0" />
             {child.label}
           </Link>
         ))}
@@ -239,7 +241,7 @@ export default function Header() {
           scrolled ? 'shadow-md shadow-black/08' : ''
         }`}
       >
-        {/* 1 ── Color stripe */}
+        {/* 1 ── Color stripe (official Lagos motif) */}
         <div className="flex h-[5px]" aria-hidden="true">
           <div className="flex-1 bg-[#BE1E2D]" />
           <div className="flex-1 bg-[#1A3A7A]" />
@@ -247,61 +249,61 @@ export default function Header() {
           <div className="flex-1 bg-[#1B7A3E]" />
         </div>
 
-        {/* 2 ── Utility bar */}
-        <div className="bg-[#0F3D2E]">
+        {/* 2 ── Utility bar (BLACK) */}
+        <div className="bg-[#111111]">
           {/* Mobile: single line */}
           <div className="flex items-center justify-center gap-3 px-4 py-[7px] md:hidden">
-            <Phone size={10} className="text-[#C89B3C]" strokeWidth={2.5} />
+            <Phone size={10} className="text-[#F5A623]" strokeWidth={2.5} />
             <span className="text-[10px] font-semibold tracking-[0.16em] uppercase text-white/70">
               Emergency Lines:
             </span>
-            <a href="tel:767" className="text-[10px] font-bold text-[#C89B3C] hover:text-white transition-colors">767</a>
+            <a href="tel:767" className="text-[10px] font-bold text-[#F5A623] hover:text-white transition-colors">767</a>
             <span className="text-white/25 text-[10px]">|</span>
-            <a href="tel:112" className="text-[10px] font-bold text-[#C89B3C] hover:text-white transition-colors">112</a>
+            <a href="tel:112" className="text-[10px] font-bold text-[#F5A623] hover:text-white transition-colors">112</a>
           </div>
 
           {/* Desktop: three columns */}
           <div className="hidden md:grid grid-cols-3 items-center max-w-7xl mx-auto px-6 lg:px-10 py-[9px]">
             <div className="flex items-center gap-5">
-              <span className="flex items-center gap-1.5 text-[10.5px] text-white/55 font-medium">
-                <Clock size={11} strokeWidth={2} className="text-white/35" />
+              <span className="flex items-center gap-1.5 text-[10.5px] text-white/65 font-medium">
+                <Clock size={11} strokeWidth={2} className="text-white/45" />
                 Mon – Fri · 8:00am – 6:00pm
               </span>
-              <span className="text-white/20">|</span>
+              <span className="text-white/25">|</span>
               <a
                 href="mailto:info@ibejulekki.lg.gov.ng"
-                className="flex items-center gap-1.5 text-[10.5px] text-white/55 font-medium hover:text-[#C89B3C] transition-colors"
+                className="flex items-center gap-1.5 text-[10.5px] text-white/65 font-medium hover:text-[#F5A623] transition-colors"
               >
-                <Mail size={11} strokeWidth={2} className="text-white/35" />
+                <Mail size={11} strokeWidth={2} className="text-white/45" />
                 info@ibejulekki.lg.gov.ng
               </a>
             </div>
 
             <div className="flex items-center justify-center gap-2.5">
-              <Phone size={11} strokeWidth={2.5} className="text-[#C89B3C]" />
+              <Phone size={11} strokeWidth={2.5} className="text-[#F5A623]" />
               <span className="text-[10.5px] font-semibold tracking-[0.18em] uppercase text-white/70">
                 Toll-Free Emergency (LASEMA)
               </span>
-              <a href="tel:767" className="text-[10.5px] font-bold text-[#C89B3C] hover:text-white transition-colors">767</a>
+              <a href="tel:767" className="text-[10.5px] font-bold text-[#F5A623] hover:text-white transition-colors">767</a>
               <span className="text-white/25">|</span>
-              <a href="tel:112" className="text-[10.5px] font-bold text-[#C89B3C] hover:text-white transition-colors">112</a>
+              <a href="tel:112" className="text-[10.5px] font-bold text-[#F5A623] hover:text-white transition-colors">112</a>
             </div>
 
             <div className="flex items-center justify-end gap-4">
-              <span className="flex items-center gap-1.5 text-[10.5px] text-white/55 font-medium">
+              <span className="flex items-center gap-1.5 text-[10.5px] text-white/65 font-medium">
                 <Circle size={7} className="fill-emerald-400 text-emerald-400 animate-pulse" />
                 All services operational
               </span>
-              <span className="text-white/20">|</span>
-              <button className="text-[10.5px] font-semibold tracking-[0.14em] text-white/55 hover:text-[#C89B3C] transition-colors">
+              <span className="text-white/25">|</span>
+              <button className="text-[10.5px] font-semibold tracking-[0.14em] text-white/65 hover:text-[#F5A623] transition-colors">
                 EN · YO
               </button>
             </div>
           </div>
         </div>
 
-        {/* 3 ── Main nav */}
-        <div className="bg-white border-b border-[#0F3D2E]/10">
+        {/* 3 ── Main nav (WHITE) */}
+        <div className="bg-white border-b border-black/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
             <div className="flex items-center justify-between h-[66px] md:h-[74px]">
 
@@ -317,31 +319,31 @@ export default function Header() {
                   />
                 </div>
                 <div className="hidden sm:block">
-                  <div className="text-[14.5px] font-bold text-[#0F3D2E] leading-tight tracking-tight">
+                  <div className="text-[14.5px] font-bold text-[#111111] leading-tight tracking-tight">
                     Ibeju-Lekki LGA
                   </div>
-                  <div className="text-[9px] font-semibold uppercase tracking-[0.22em] text-[#0A1F14]/45 leading-tight">
-                    Local Government · Lagos State
+                  <div className="text-[9px] font-semibold uppercase tracking-[0.22em] text-black/45 leading-tight">
+                    Local Government<br />Lagos State
                   </div>
                 </div>
               </Link>
 
               {/* Desktop links */}
-              <nav className="hidden lg:flex items-center gap-7 xl:gap-9" aria-label="Main navigation">
+              <nav className="hidden xl:flex items-center gap-5 2xl:gap-7" aria-label="Main navigation">
                 {NAV_ITEMS.map((item) => (
                   <DesktopNavItem key={item.label} item={item} />
                 ))}
               </nav>
 
               {/* Desktop CTA */}
-              <div className="hidden lg:flex items-center gap-3">
+              <div className="hidden xl:flex items-center gap-3 ml-3">
                 <Link
                   href="/resources/revenue"
                   className="
                     inline-flex items-center gap-2 px-5 py-2.5
                     text-[11.5px] font-bold tracking-[0.08em] uppercase
-                    bg-[#0F3D2E] text-white rounded-full
-                    hover:bg-[#C89B3C] hover:text-[#0A1F14]
+                    bg-[#F5A623] text-black rounded-full
+                    hover:bg-[#111111] hover:text-[#F5A623]
                     transition-all duration-200
                   "
                 >
@@ -351,14 +353,14 @@ export default function Header() {
               </div>
 
               {/* Mobile controls */}
-              <div className="flex items-center gap-2 lg:hidden">
+              <div className="flex items-center gap-2 xl:hidden">
                 <Link
                   href="/resources/revenue"
                   className="
                     hidden sm:inline-flex items-center gap-1.5 px-4 py-2
                     text-[11px] font-bold tracking-[0.08em] uppercase
-                    bg-[#0F3D2E] text-white rounded-full
-                    hover:bg-[#C89B3C] hover:text-[#0A1F14]
+                    bg-[#F5A623] text-black rounded-full
+                    hover:bg-[#111111] hover:text-[#F5A623]
                     transition-all duration-200
                   "
                 >
@@ -370,11 +372,11 @@ export default function Header() {
                   onClick={() => setMobileOpen((o) => !o)}
                   aria-expanded={mobileOpen}
                   aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-                  className="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-[#0F3D2E]/06 transition-colors"
+                  className="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-black/06 transition-colors"
                 >
                   {mobileOpen
-                    ? <X size={20} strokeWidth={2} className="text-[#0F3D2E]" />
-                    : <Menu size={20} strokeWidth={2} className="text-[#0F3D2E]" />
+                    ? <X size={20} strokeWidth={2} className="text-[#111111]" />
+                    : <Menu size={20} strokeWidth={2} className="text-[#111111]" />
                   }
                 </button>
               </div>
@@ -388,7 +390,7 @@ export default function Header() {
         onClick={() => setMobileOpen(false)}
         aria-hidden="true"
         className={`
-          fixed inset-0 z-[190] bg-black/35 backdrop-blur-sm lg:hidden
+          fixed inset-0 z-[190] bg-black/35 backdrop-blur-sm xl:hidden
           transition-opacity duration-300
           ${mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
         `}
@@ -401,22 +403,22 @@ export default function Header() {
         aria-label="Navigation menu"
         className={`
           fixed top-0 right-0 z-[195] h-full w-[85vw] max-w-[340px]
-          bg-white shadow-2xl shadow-black/20 lg:hidden flex flex-col
+          bg-white shadow-2xl shadow-black/20 xl:hidden flex flex-col
           transition-transform duration-300 ease-in-out
           ${mobileOpen ? 'translate-x-0' : 'translate-x-full'}
         `}
       >
         {/* Drawer header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-[#0F3D2E]/10">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-black/10">
           <Link href="/" onClick={() => setMobileOpen(false)} className="flex items-center gap-3">
             <div className="relative w-9 h-9 flex-shrink-0">
               <Image src="/ibeju-lekki-logo-sm.webp" alt="" fill className="object-contain" />
             </div>
             <div>
-              <div className="text-[13px] font-bold text-[#0F3D2E] leading-tight">
+              <div className="text-[13px] font-bold text-[#111111] leading-tight">
                 Ibeju-Lekki LGA
               </div>
-              <div className="text-[9px] uppercase tracking-[0.18em] text-[#0A1F14]/40">
+              <div className="text-[9px] uppercase tracking-[0.18em] text-black/40">
                 Official Website
               </div>
             </div>
@@ -424,9 +426,9 @@ export default function Header() {
           <button
             onClick={() => setMobileOpen(false)}
             aria-label="Close menu"
-            className="w-8 h-8 flex items-center justify-center rounded-full bg-[#0F3D2E]/06 hover:bg-[#0F3D2E]/12 transition-colors"
+            className="w-8 h-8 flex items-center justify-center rounded-full bg-black/06 hover:bg-black/12 transition-colors"
           >
-            <X size={16} strokeWidth={2} className="text-[#0F3D2E]" />
+            <X size={16} strokeWidth={2} className="text-[#111111]" />
           </button>
         </div>
 
@@ -438,27 +440,27 @@ export default function Header() {
         </nav>
 
         {/* Drawer footer */}
-        <div className="p-5 border-t border-[#0F3D2E]/10 space-y-3">
+        <div className="p-5 border-t border-black/10 space-y-3">
           <Link
             href="/resources/revenue"
             onClick={() => setMobileOpen(false)}
             className="
               flex items-center justify-center gap-2 w-full py-3
               text-[12px] font-bold tracking-[0.1em] uppercase
-              bg-[#0F3D2E] text-white rounded-full
-              hover:bg-[#C89B3C] hover:text-[#0A1F14]
+              bg-[#F5A623] text-black rounded-full
+              hover:bg-[#111111] hover:text-[#F5A623]
               transition-all duration-200
             "
           >
             <CreditCard size={14} strokeWidth={2.5} />
             Pay Levies
           </Link>
-          <div className="flex items-center justify-center gap-3 text-[10.5px] text-[#0A1F14]/45">
-            <Phone size={11} className="text-[#0F3D2E]/50" strokeWidth={2} />
+          <div className="flex items-center justify-center gap-3 text-[10.5px] text-black/55">
+            <Phone size={11} className="text-black/55" strokeWidth={2} />
             <span>Emergency:</span>
-            <a href="tel:767" className="font-bold text-[#0F3D2E] hover:text-[#C89B3C] transition-colors">767</a>
-            <span className="text-[#0A1F14]/20">|</span>
-            <a href="tel:112" className="font-bold text-[#0F3D2E] hover:text-[#C89B3C] transition-colors">112</a>
+            <a href="tel:767" className="font-bold text-[#111111] hover:text-[#F5A623] transition-colors">767</a>
+            <span className="text-black/20">|</span>
+            <a href="tel:112" className="font-bold text-[#111111] hover:text-[#F5A623] transition-colors">112</a>
           </div>
         </div>
       </div>
