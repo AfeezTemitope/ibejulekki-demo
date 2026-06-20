@@ -32,7 +32,7 @@ export default function SubscribeSection() {
               Council updates,<br /><span className="text-brand-yellow">delivered to you.</span>
             </h2>
             <p className="text-[14px] text-white/50 leading-[1.8] max-w-[420px]">
-              Subscribe for news, emergency alerts, and community programmes. Push notifications — no app needed.
+              Subscribe for news, emergency alerts, and community programmes. Push notifications, no app needed.
             </p>
             <div className="flex flex-wrap gap-2 mt-6">
               {['Breaking news','Emergency alerts','New programmes','Council notices'].map((tag) => (

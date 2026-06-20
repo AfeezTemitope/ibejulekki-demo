@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 export const metadata = {
   title: 'Performance Report 2021–2025 | Ibeju-Lekki Local Government',
   description:
-    'A summary of the Ibeju-Lekki Local Government performance report, 2021 to 2025 — Making Ibeju-Lekki Great for Everyone.',
+    'A summary of the Ibeju-Lekki Local Government performance report, 2021 to 2025, Making Ibeju-Lekki Great for Everyone.',
 }
 
 const PILLARS = [
@@ -47,7 +47,7 @@ export default function Page() {
               Performance Report
             </h1>
             <p className="mt-3 text-[15px] text-white/70 leading-relaxed max-w-2xl">
-              Making Ibeju-Lekki Great for Everyone — a record of the projects, programmes and reforms
+              Making Ibeju-Lekki Great for Everyone, a record of the projects, programmes and reforms
               delivered by the administration of Hon. Abdullahi Sesan Olowa.
             </p>
             <a href="/performance-report.pdf" target="_blank" rel="noopener noreferrer"
@@ -64,7 +64,7 @@ export default function Page() {
             <span className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-black/45">Overview</span>
           </div>
           <div className="max-w-2xl space-y-4 text-[14px] sm:text-[15px] text-black/65 leading-[1.85]">
-            <p>The administration came on board with a plan anchored on development across economic growth, infrastructure, environmental sustainability, government performance management, and social development and security — areas chosen to align with the Lagos State THEMES agenda.</p>
+            <p>The administration came on board with a plan anchored on development across economic growth, infrastructure, environmental sustainability, government performance management, and social development and security, areas chosen to align with the Lagos State THEMES agenda.</p>
             <p>Recognising that the council could not rely on federal allocation alone to close the gap in infrastructure and social services, it overhauled revenue collection and administration, achieving roughly 500 percent growth in internally generated revenue, and reinvested in projects and programmes across the wards.</p>
           </div>
         </section>

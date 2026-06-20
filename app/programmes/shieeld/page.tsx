@@ -55,7 +55,7 @@ export default function Page() {
                 </h1>
                 <p className="mt-3 max-w-xl text-[14px] sm:text-[15px] text-black/55 leading-[1.8]">
                   Seven pillars for the next term under Hon. Abdullahi Sesan Olowa,
-                  Executive Chairman &mdash; Making Ibeju-Lekki Great for Everyone. Tap any pillar for the full plan.
+                  Executive Chairman, Making Ibeju-Lekki Great for Everyone. Tap any pillar for the full plan.
                 </p>
                 <a
                   href="/shieeld-manifesto.pdf"

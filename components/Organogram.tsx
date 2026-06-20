@@ -47,12 +47,12 @@ export default function Organogram() {
             Council Organogram
           </h2>
           <p className="mt-3 text-[14px] text-black/55 leading-[1.8]">
-            How Ibeju-Lekki Local Government is organised — from the Executive Chairman
+            How Ibeju-Lekki Local Government is organised, from the Executive Chairman
             to the departments and units that deliver services to residents.
           </p>
         </div>
 
-        {/* Tier 0 — Executive Chairman */}
+        {/* Tier 0, Executive Chairman */}
         <div className="flex justify-center">
           <div className="w-full max-w-xs text-center rounded-2xl bg-[#111111] text-white px-6 py-5 shadow-sm">
             <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-brand-yellow mb-1">
@@ -64,7 +64,7 @@ export default function Organogram() {
 
         <Connector />
 
-        {/* Tier 1 — Reports to the Chairman */}
+        {/* Tier 1, Reports to the Chairman */}
         <div className="text-center text-[10px] font-bold uppercase tracking-[0.2em] text-black/40 mb-4">
           Reports to the Executive Chairman
         </div>
@@ -96,7 +96,7 @@ export default function Organogram() {
 
         <Connector />
 
-        {/* Tier 2 — Office of the Council Manager */}
+        {/* Tier 2, Office of the Council Manager */}
         <div className="rounded-2xl border border-black/10 bg-white p-5 sm:p-8 max-w-6xl mx-auto">
           <div className="text-center mb-6">
             <span className="inline-block text-[10px] font-bold uppercase tracking-[0.2em] text-black/45">

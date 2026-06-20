@@ -92,7 +92,7 @@ img  { max-width: 100%; height: auto; }
   overflow: hidden;
 }
 
-/* ibeju-bottom-nav-space — keep page content clear of the fixed mobile tab bar */
+/* ibeju-bottom-nav-space, keep page content clear of the fixed mobile tab bar */
 @media (max-width: 1279px) {
   body { padding-bottom: calc(4.25rem + env(safe-area-inset-bottom)); }
 }

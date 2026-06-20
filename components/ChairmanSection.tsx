@@ -26,7 +26,7 @@ export default function ChairmanSection({ data = PLACEHOLDER }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="relative">
             <div className="relative aspect-[4/5] max-w-[420px] mx-auto lg:mx-0 rounded-3xl overflow-hidden border border-[#111111]/10 shadow-lg shadow-[#111111]/06">
-              <Image src="/chairman_on_landingpage.webp" alt={`${data.name} — ${data.title}`} fill className="object-cover object-[center_12%]" sizes="(max-width:1024px) 90vw, 420px" />
+              <Image src="/chairman_on_landingpage.webp" alt={`${data.name}, ${data.title}`} fill className="object-cover object-[center_12%]" sizes="(max-width:1024px) 90vw, 420px" />
               <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-[#111111]/80 via-[#111111]/40 to-transparent">
                 <div className="text-[9.5px] font-bold uppercase tracking-[0.24em] text-[#B26B00] mb-1">Executive Chairman</div>
                 <div className="text-[17px] font-bold text-white leading-tight">{data.name}</div>
@@ -46,7 +46,7 @@ export default function ChairmanSection({ data = PLACEHOLDER }: Props) {
               </blockquote>
             </div>
             <p className="text-[14px] text-[#111111]/55 leading-[1.8] mb-10 max-w-[480px]">
-              Hon. Abdullahi Sesan Olowa leads Ibeju-Lekki Local Government with a clear blueprint — the SHIEELD Agenda — translating policy into visible, measurable change across all communities and wards.
+              Hon. Abdullahi Sesan Olowa leads Ibeju-Lekki Local Government with a clear blueprint, the SHIEELD Agenda, translating policy into visible, measurable change across all communities and wards.
             </p>
             {data.stats && (
               <div className="grid grid-cols-2 gap-x-6 gap-y-5 mb-10">

@@ -82,7 +82,7 @@ export default function Hero() {
           }}
         />
 
-        {/* Top-right gold wash — very faint */}
+        {/* Top-right gold wash, very faint */}
         <div
           aria-hidden="true"
           className="absolute top-0 right-0 w-1/2 h-full pointer-events-none"
@@ -217,11 +217,11 @@ export default function Hero() {
                 hover:border-brand-yellow/40 transition-colors duration-300
               ">
                 <div className="flex items-center gap-4 mb-4">
-                  {/* Portrait photo — square crop, face centred */}
+                  {/* Portrait photo, square crop, face centred */}
                   <div className="relative w-16 h-16 sm:w-[72px] sm:h-[72px] rounded-2xl overflow-hidden flex-shrink-0 ring-2 ring-brand-yellow/35 shadow-sm">
                     <Image
                       src="/chairman_on_landingpage.webp"
-                      alt="Hon. Abdullahi Sesan Olowa — Executive Chairman"
+                      alt="Hon. Abdullahi Sesan Olowa, Executive Chairman"
                       fill
                       className="object-cover object-[center_15%]"
                       sizes="(max-width: 640px) 64px, 72px"
@@ -250,7 +250,7 @@ export default function Hero() {
               {/* SHIEELD tiles */}
               <div className="border border-[#111111]/12 rounded-2xl p-4 sm:p-5">
                 <div className="text-[9.5px] font-bold uppercase tracking-[0.24em] text-[#111111]/35 mb-3">
-                  The SHIEELD Agenda — 7 Pillars
+                  The SHIEELD Agenda, 7 Pillars
                 </div>
 
                 <div className="grid grid-cols-7 gap-1.5">
@@ -328,7 +328,7 @@ export default function Hero() {
                     Council Notice
                   </div>
                   <div className="text-[11px] text-[#111111]/50 leading-snug">
-                    LASG Local Government Development Plan — Conference 57 · Apr 2026
+                    LASG Local Government Development Plan, Conference 57 · Apr 2026
                   </div>
                 </div>
                 <Link
