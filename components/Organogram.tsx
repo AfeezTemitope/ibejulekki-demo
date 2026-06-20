@@ -34,11 +34,11 @@ export default function Organogram() {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <div className="flex items-center justify-center gap-3 mb-3">
-            <span className="h-px w-8 bg-[#F5A623]" aria-hidden="true" />
+            <span className="h-px w-8 bg-brand-yellow" aria-hidden="true" />
             <span className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-black/45">
               Government · Structure
             </span>
-            <span className="h-px w-8 bg-[#F5A623]" aria-hidden="true" />
+            <span className="h-px w-8 bg-brand-yellow" aria-hidden="true" />
           </div>
           <h2
             id="org-heading"
@@ -55,7 +55,7 @@ export default function Organogram() {
         {/* Tier 0 — Executive Chairman */}
         <div className="flex justify-center">
           <div className="w-full max-w-xs text-center rounded-2xl bg-[#111111] text-white px-6 py-5 shadow-sm">
-            <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#F5A623] mb-1">
+            <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-brand-yellow mb-1">
               Executive Chairman
             </div>
             <div className="text-[15px] font-bold leading-tight">Hon. Abdullahi Sesan Olowa</div>
@@ -73,7 +73,7 @@ export default function Organogram() {
             <div key={d.role} className="flex flex-col">
               <div
                 className={`rounded-xl border px-4 py-4 text-center ${
-                  d.highlight ? 'border-[#F5A623] bg-[#F5A623]/10' : 'border-black/12 bg-white'
+                  d.highlight ? 'border-brand-yellow bg-brand-yellow/10' : 'border-black/12 bg-white'
                 }`}
               >
                 <div className="text-[13px] font-bold text-[#111111] leading-tight">{d.role}</div>
@@ -114,9 +114,9 @@ export default function Organogram() {
             {DEPARTMENTS.map((name) => (
               <div
                 key={name}
-                className="flex items-start gap-3 rounded-xl border border-black/10 bg-white px-4 py-3 hover:border-[#F5A623]/50 transition-colors"
+                className="flex items-start gap-3 rounded-xl border border-black/10 bg-white px-4 py-3 hover:border-brand-yellow/50 transition-colors"
               >
-                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-[#F5A623] flex-shrink-0" aria-hidden="true" />
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-brand-yellow flex-shrink-0" aria-hidden="true" />
                 <div>
                   <div className="text-[9px] font-bold uppercase tracking-[0.16em] text-black/40">Head</div>
                   <div className="text-[12.5px] font-semibold text-[#111111] leading-snug">{name}</div>
@@ -136,7 +136,7 @@ export default function Organogram() {
             {UNITS.map((name) => (
               <div
                 key={name}
-                className="rounded-xl border border-black/10 bg-white px-3 py-3 text-center hover:border-[#F5A623]/50 transition-colors"
+                className="rounded-xl border border-black/10 bg-white px-3 py-3 text-center hover:border-brand-yellow/50 transition-colors"
               >
                 <div className="text-[9px] font-bold uppercase tracking-[0.16em] text-black/40 mb-0.5">Head</div>
                 <div className="text-[12px] font-semibold text-[#111111] leading-tight">{name}</div>

@@ -44,11 +44,11 @@ export default function Page() {
               </div>
               <div className="text-center sm:text-left">
                 <div className="flex items-center justify-center sm:justify-start gap-3 mb-3">
-                  <span className="h-px w-8 bg-[#F5A623]" aria-hidden="true" />
+                  <span className="h-px w-8 bg-brand-yellow" aria-hidden="true" />
                   <span className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-black/45">Programmes &middot; Agenda 2029</span>
                 </div>
                 <h1 className="text-[clamp(1.9rem,5vw,3rem)] font-extrabold text-[#111111] tracking-tight leading-tight">
-                  The <span className="text-[#F5A623]">SHIEELD</span> Agenda
+                  The <span className="text-brand-yellow">SHIEELD</span> Agenda
                 </h1>
                 <p className="mt-3 max-w-xl text-[14px] sm:text-[15px] text-black/55 leading-[1.8]">
                   Seven commitments shaping Ibeju-Lekki under the leadership of Hon. Abdullahi Sesan Olowa,
@@ -59,7 +59,7 @@ export default function Page() {
                     href="/performance-report.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full bg-[#F5A623] px-5 py-3 text-[13px] font-bold text-black transition-colors hover:bg-[#111111] hover:text-[#F5A623]"
+                    className="inline-flex items-center gap-2 rounded-full bg-brand-yellow px-5 py-3 text-[13px] font-bold text-black transition-colors hover:bg-[#111111] hover:text-brand-yellow"
                   >
                     <Download size={15} strokeWidth={2.5} /> Download the Manifesto (PDF)
                   </a>
@@ -77,9 +77,9 @@ export default function Page() {
                 <Link
                   key={p.slug}
                   href={`/programmes/shieeld/${p.slug}`}
-                  className="group flex gap-4 rounded-2xl border border-black/10 bg-white p-5 sm:p-6 transition-all hover:border-[#F5A623] hover:shadow-md"
+                  className="group flex gap-4 rounded-2xl border border-black/10 bg-white p-5 sm:p-6 transition-all hover:border-brand-yellow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-[#F5A623] text-[20px] font-extrabold text-black">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-brand-yellow text-[20px] font-extrabold text-black">
                     {p.letter}
                   </div>
                   <div className="min-w-0">
@@ -99,14 +99,14 @@ export default function Page() {
 
           <div className="mt-10 flex flex-col items-start justify-between gap-5 rounded-2xl bg-[#111111] p-6 text-white sm:flex-row sm:items-center sm:p-8">
             <div>
-              <div className="mb-1.5 text-[10px] font-bold uppercase tracking-[0.22em] text-[#F5A623]">Performance Report 2021 &ndash; 2025</div>
+              <div className="mb-1.5 text-[10px] font-bold uppercase tracking-[0.22em] text-brand-yellow">Performance Report 2021 &ndash; 2025</div>
               <p className="max-w-md text-[14px] leading-relaxed text-white/70">
                 See how the SHIEELD Agenda has been delivered across the local government.
               </p>
             </div>
             <Link
               href="/programmes/performance-report"
-              className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-[#F5A623] px-6 py-3.5 text-[13px] font-bold text-black transition-colors hover:bg-white"
+              className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-brand-yellow px-6 py-3.5 text-[13px] font-bold text-black transition-colors hover:bg-white"
             >
               View the Report <ArrowRight size={15} strokeWidth={2.5} />
             </Link>

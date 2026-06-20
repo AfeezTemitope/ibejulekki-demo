@@ -20,7 +20,7 @@ export default function Page() {
               <span className="text-[#111111] font-semibold">About</span>
             </nav>
             <div className="flex items-center gap-3 mb-3">
-              <span className="h-px w-8 bg-[#F5A623]" aria-hidden="true" />
+              <span className="h-px w-8 bg-brand-yellow" aria-hidden="true" />
               <span className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-black/45">About</span>
             </div>
             <h1 className="text-[clamp(1.9rem,5vw,3rem)] font-extrabold text-[#111111] tracking-tight leading-tight">

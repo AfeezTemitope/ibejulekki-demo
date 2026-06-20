@@ -36,7 +36,7 @@ export default function PagePlaceholder({ title, sectionLabel, description }: Pr
             </nav>
 
             <div className="flex items-center gap-3 mb-3">
-              <span className="h-px w-8 bg-[#F5A623]" aria-hidden="true" />
+              <span className="h-px w-8 bg-brand-yellow" aria-hidden="true" />
               <span className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-black/45">
                 {sectionLabel ?? 'Ibeju-Lekki LGA'}
               </span>
@@ -57,7 +57,7 @@ export default function PagePlaceholder({ title, sectionLabel, description }: Pr
         {/* On the way card */}
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-10 py-14 sm:py-20">
           <div className="border border-black/10 rounded-2xl p-8 sm:p-12 text-center">
-            <div className="w-14 h-14 mx-auto mb-5 rounded-2xl bg-[#F5A623]/15 flex items-center justify-center">
+            <div className="w-14 h-14 mx-auto mb-5 rounded-2xl bg-brand-yellow/15 flex items-center justify-center">
               <Clock size={24} strokeWidth={1.8} className="text-[#111111]" />
             </div>
             <h2 className="text-[clamp(1.1rem,3vw,1.5rem)] font-bold text-[#111111] mb-3">
@@ -70,13 +70,13 @@ export default function PagePlaceholder({ title, sectionLabel, description }: Pr
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
                 href="/"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#F5A623] text-black text-[13px] font-bold tracking-[0.04em] rounded-full hover:bg-[#111111] hover:text-[#F5A623] transition-all duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-brand-yellow text-black text-[13px] font-bold tracking-[0.04em] rounded-full hover:bg-[#111111] hover:text-brand-yellow transition-all duration-200"
               >
                 Back to Home <ArrowRight size={15} strokeWidth={2.5} />
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 border border-black/20 text-[#111111] text-[13px] font-semibold tracking-[0.04em] rounded-full hover:border-[#F5A623] hover:bg-[#F5A623]/10 transition-all duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3.5 border border-black/20 text-[#111111] text-[13px] font-semibold tracking-[0.04em] rounded-full hover:border-brand-yellow hover:bg-brand-yellow/10 transition-all duration-200"
               >
                 Contact the Council
               </Link>

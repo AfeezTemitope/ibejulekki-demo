@@ -107,7 +107,7 @@ export default function Hero() {
                 `}
                 style={{ transitionDelay: '0ms' }}
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F5A623] flex-shrink-0" />
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-yellow flex-shrink-0" />
                 <span className="text-[10px] font-semibold tracking-[0.22em] uppercase text-[#111111]">
                   Official Local Govt. Website
                 </span>
@@ -155,8 +155,8 @@ export default function Hero() {
                   href="/programmes/shieeld"
                   className="
                     inline-flex items-center gap-2 px-6 py-3.5
-                    bg-[#F5A623] text-black text-[13px] font-bold tracking-[0.04em]
-                    rounded-full hover:bg-[#111111] hover:text-[#F5A623]
+                    bg-brand-yellow text-black text-[13px] font-bold tracking-[0.04em]
+                    rounded-full hover:bg-[#111111] hover:text-brand-yellow
                     active:scale-95 transition-all duration-200
                     shadow-sm shadow-[#111111]/15
                   "
@@ -214,13 +214,13 @@ export default function Hero() {
               {/* Chairman card */}
               <div className="
                 border border-[#111111]/12 rounded-2xl p-5 sm:p-6
-                hover:border-[#F5A623]/40 transition-colors duration-300
+                hover:border-brand-yellow/40 transition-colors duration-300
               ">
                 <div className="flex items-center gap-4 mb-4">
                   {/* Portrait photo — square crop, face centred */}
-                  <div className="relative w-16 h-16 sm:w-[72px] sm:h-[72px] rounded-2xl overflow-hidden flex-shrink-0 ring-2 ring-[#F5A623]/35 shadow-sm">
+                  <div className="relative w-16 h-16 sm:w-[72px] sm:h-[72px] rounded-2xl overflow-hidden flex-shrink-0 ring-2 ring-brand-yellow/35 shadow-sm">
                     <Image
-                      src="/chairman.webp"
+                      src="/chairman_on_landingpage.webp"
                       alt="Hon. Abdullahi Sesan Olowa — Executive Chairman"
                       fill
                       className="object-cover object-[center_15%]"
@@ -240,7 +240,7 @@ export default function Hero() {
                     </div>
                   </div>
                 </div>
-                <p className="text-[13px] text-[#111111]/55 leading-[1.78] italic border-l-[2.5px] border-[#F5A623]/40 pl-3.5">
+                <p className="text-[13px] text-[#111111]/55 leading-[1.78] italic border-l-[2.5px] border-brand-yellow/40 pl-3.5">
                   &ldquo;Our dedication is rooted in the comprehensive advancement
                   of Ibeju-Lekki through SHIEELD, we are transforming this LGA
                   into a model of modern governance.&rdquo;
@@ -265,8 +265,8 @@ export default function Hero() {
                           flex flex-col items-center justify-center rounded-xl
                           py-2.5 px-1 border transition-all duration-300 cursor-pointer
                           ${isActive
-                            ? 'bg-[#F5A623] border-[#F5A623] scale-105 shadow-md shadow-[#F5A623]/25'
-                            : 'bg-white border-[#111111]/12 hover:border-[#111111]/30 hover:bg-[#F5A623]/10'
+                            ? 'bg-brand-yellow border-brand-yellow scale-105 shadow-md shadow-brand-yellow/25'
+                            : 'bg-white border-[#111111]/12 hover:border-[#111111]/30 hover:bg-brand-yellow/10'
                           }
                         `}
                       >
@@ -294,7 +294,7 @@ export default function Hero() {
 
                 {/* Active pillar info */}
                 <div className="mt-3 pt-3 border-t border-[#111111]/08 flex items-center gap-3 min-h-[40px]">
-                  <div className="w-8 h-8 rounded-lg bg-[#F5A623]/12 flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-brand-yellow/12 flex items-center justify-center flex-shrink-0">
                     <ActiveIcon size={15} strokeWidth={2} className="text-[#111111]" />
                   </div>
                   <div>
@@ -352,10 +352,10 @@ export default function Hero() {
           {/* Label */}
           <div className="
             flex-shrink-0 flex items-center gap-2 px-4 sm:px-5
-            bg-[#F5A623] text-black z-10
+            bg-brand-yellow text-black z-10
             text-[9.5px] font-bold uppercase tracking-[0.22em]
           ">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#F5A623]" aria-hidden="true" />
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-yellow" aria-hidden="true" />
             <span className="hidden sm:inline py-3">The New Lagos.</span>
             <span className="sm:hidden py-3">The New Lagos.</span>
           </div>
@@ -373,7 +373,7 @@ export default function Hero() {
                   className="inline-flex items-center gap-3 px-6 text-[12px] font-medium text-[#111111]/45 italic"
                 >
                   {item}
-                  <span className="w-1 h-1 rounded-full bg-[#F5A623]/50 flex-shrink-0" />
+                  <span className="w-1 h-1 rounded-full bg-brand-yellow/50 flex-shrink-0" />
                 </span>
               ))}
             </div>

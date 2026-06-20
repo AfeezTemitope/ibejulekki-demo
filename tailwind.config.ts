@@ -12,6 +12,7 @@ const config: Config = {
         sans: ['Poppins', 'system-ui', 'sans-serif'],
       },
       colors: {
+        'brand-yellow': '#FFBA26',
         // ── Official Ibeju-Lekki palette ──────────────────────────────
         yellow: '#F5A623',  // primary highlight / fills (black text on top)
         amber:  '#B26B00',  // readable yellow text on white; hovers

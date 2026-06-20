@@ -21,7 +21,7 @@ export default function QuickServices({ services = PLACEHOLDER_SERVICES }: Props
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         <div className="mb-10 sm:mb-12">
           <div className="flex items-center gap-3 mb-3">
-            <span className="h-px w-8 bg-[#F5A623]" aria-hidden="true" />
+            <span className="h-px w-8 bg-brand-yellow" aria-hidden="true" />
             <span className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-[#111111]/45">Quick Access</span>
           </div>
           <h2 id="services-heading" className="text-[clamp(1.6rem,3.5vw,2.2rem)] font-extrabold text-[#111111] tracking-tight leading-tight">
@@ -38,9 +38,9 @@ export default function QuickServices({ services = PLACEHOLDER_SERVICES }: Props
             const props = svc.external ? { href:svc.href, target:'_blank', rel:'noopener noreferrer' } : { href:svc.href }
             return (
               <Wrapper key={svc._id} {...(props as any)}
-                className="group relative flex flex-col items-center text-center border border-[#111111]/10 rounded-2xl p-5 sm:p-6 hover:border-[#F5A623]/50 hover:shadow-md hover:-translate-y-1 active:scale-95 transition-all duration-200 cursor-pointer bg-white"
+                className="group relative flex flex-col items-center text-center border border-[#111111]/10 rounded-2xl p-5 sm:p-6 hover:border-brand-yellow/50 hover:shadow-md hover:-translate-y-1 active:scale-95 transition-all duration-200 cursor-pointer bg-white"
               >
-                <div className="w-11 h-11 rounded-xl mb-3 bg-[#F5A623]/12 flex items-center justify-center group-hover:bg-[#F5A623] transition-colors duration-200">
+                <div className="w-11 h-11 rounded-xl mb-3 bg-brand-yellow/12 flex items-center justify-center group-hover:bg-brand-yellow transition-colors duration-200">
                   <Icon size={20} strokeWidth={1.8} className="text-[#111111] group-hover:text-black transition-colors duration-200" />
                 </div>
                 <span className="text-[12.5px] font-bold text-[#111111] leading-tight mb-1 group-hover:text-[#B26B00] transition-colors">{svc.label}</span>

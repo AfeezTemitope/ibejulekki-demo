@@ -134,7 +134,7 @@ export default async function NewsPost({ params }: { params: { slug: string } })
               <ArrowLeft size={14} strokeWidth={2} /> Back to News
             </Link>
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-[10px] font-bold uppercase tracking-[0.18em] bg-[#F5A623] text-black px-3 py-1 rounded-full">
+              <span className="text-[10px] font-bold uppercase tracking-[0.18em] bg-brand-yellow text-black px-3 py-1 rounded-full">
                 {CATEGORY_LABELS[post.category] ?? post.category}
               </span>
             </div>
@@ -159,7 +159,7 @@ export default async function NewsPost({ params }: { params: { slug: string } })
         {/* Article body */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-16">
 
-          <p className="text-[16px] sm:text-[17px] text-[#111111]/70 leading-[1.8] font-medium border-l-[3px] border-[#F5A623] pl-5 mb-10">
+          <p className="text-[16px] sm:text-[17px] text-[#111111]/70 leading-[1.8] font-medium border-l-[3px] border-brand-yellow pl-5 mb-10">
             {post.summary}
           </p>
 

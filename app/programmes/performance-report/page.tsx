@@ -42,7 +42,7 @@ export default function Page() {
               <span className="text-white/25">/</span>
               <span className="text-white font-semibold">Performance Report</span>
             </nav>
-            <div className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-[#F5A623] mb-3">2021 – 2025</div>
+            <div className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-brand-yellow mb-3">2021 – 2025</div>
             <h1 className="text-[clamp(1.9rem,5vw,3rem)] font-extrabold tracking-tight leading-tight">
               Performance Report
             </h1>
@@ -51,7 +51,7 @@ export default function Page() {
               delivered by the administration of Hon. Abdullahi Sesan Olowa.
             </p>
             <a href="/performance-report.pdf" target="_blank" rel="noopener noreferrer"
-              className="mt-7 inline-flex items-center gap-2 px-6 py-3.5 bg-[#F5A623] text-black text-[13px] font-bold rounded-full hover:bg-white transition-colors">
+              className="mt-7 inline-flex items-center gap-2 px-6 py-3.5 bg-brand-yellow text-black text-[13px] font-bold rounded-full hover:bg-white transition-colors">
               <Download size={16} strokeWidth={2.5} /> Download full report (PDF)
             </a>
           </div>
@@ -60,7 +60,7 @@ export default function Page() {
         {/* Overview */}
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-16">
           <div className="flex items-center gap-3 mb-4">
-            <span className="h-px w-8 bg-[#F5A623]" aria-hidden="true" />
+            <span className="h-px w-8 bg-brand-yellow" aria-hidden="true" />
             <span className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-black/45">Overview</span>
           </div>
           <div className="max-w-2xl space-y-4 text-[14px] sm:text-[15px] text-black/65 leading-[1.85]">
@@ -73,7 +73,7 @@ export default function Page() {
         <section className="bg-[#FAFAFA] border-y border-black/06 py-12 sm:py-16">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-10">
             <div className="flex items-center gap-3 mb-6">
-              <span className="h-px w-8 bg-[#F5A623]" aria-hidden="true" />
+              <span className="h-px w-8 bg-brand-yellow" aria-hidden="true" />
               <span className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-black/45">Key Development Pillars</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -93,13 +93,13 @@ export default function Page() {
         {/* Highlights */}
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-16">
           <div className="flex items-center gap-3 mb-6">
-            <span className="h-px w-8 bg-[#F5A623]" aria-hidden="true" />
+            <span className="h-px w-8 bg-brand-yellow" aria-hidden="true" />
             <span className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-black/45">Highlights</span>
           </div>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {HIGHLIGHTS.map((h) => (
               <li key={h} className="flex items-start gap-3 rounded-xl border border-black/10 bg-white px-4 py-3">
-                <CheckCircle2 size={16} strokeWidth={2} className="text-[#F5A623] mt-0.5 flex-shrink-0" />
+                <CheckCircle2 size={16} strokeWidth={2} className="text-brand-yellow mt-0.5 flex-shrink-0" />
                 <span className="text-[13px] text-black/65 leading-snug">{h}</span>
               </li>
             ))}
@@ -111,7 +111,7 @@ export default function Page() {
               This page summarises the headlines. Download the complete report to continue reading, with all projects, figures and photographs.
             </p>
             <a href="/performance-report.pdf" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#F5A623] text-black text-[13px] font-bold rounded-full hover:bg-[#111111] hover:text-[#F5A623] transition-all duration-200">
+              className="inline-flex items-center gap-2 px-6 py-3.5 bg-brand-yellow text-black text-[13px] font-bold rounded-full hover:bg-[#111111] hover:text-brand-yellow transition-all duration-200">
               <Download size={16} strokeWidth={2.5} /> Download full report (PDF)
             </a>
             <div className="mt-4">

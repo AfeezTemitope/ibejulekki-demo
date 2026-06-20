@@ -84,15 +84,15 @@ export default function Footer() {
 
             <div className="space-y-2.5 text-[12px] mb-6">
               <div className="flex items-start gap-2.5">
-                <MapPin size={13} strokeWidth={1.8} className="text-[#F5A623] mt-0.5 flex-shrink-0" />
+                <MapPin size={13} strokeWidth={1.8} className="text-brand-yellow mt-0.5 flex-shrink-0" />
                 <span className="leading-snug whitespace-pre-line">{SETTINGS.address}</span>
               </div>
               <a href={`tel:${SETTINGS.phone}`} className="flex items-center gap-2.5 hover:text-white transition-colors">
-                <Phone size={13} strokeWidth={1.8} className="text-[#F5A623] flex-shrink-0" />
+                <Phone size={13} strokeWidth={1.8} className="text-brand-yellow flex-shrink-0" />
                 {SETTINGS.phone}
               </a>
-              <a href={`mailto:${SETTINGS.email}`} className="flex items-center gap-2.5 hover:text-[#F5A623] transition-colors">
-                <Mail size={13} strokeWidth={1.8} className="text-[#F5A623] flex-shrink-0" />
+              <a href={`mailto:${SETTINGS.email}`} className="flex items-center gap-2.5 hover:text-brand-yellow transition-colors">
+                <Mail size={13} strokeWidth={1.8} className="text-brand-yellow flex-shrink-0" />
                 {SETTINGS.email}
               </a>
             </div>
@@ -106,7 +106,7 @@ export default function Footer() {
                   aria-label={label}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full bg-white/08 flex items-center justify-center hover:bg-[#F5A623] hover:text-black transition-all duration-200"
+                  className="w-8 h-8 rounded-full bg-white/08 flex items-center justify-center hover:bg-brand-yellow hover:text-black transition-all duration-200"
                 >
                   <Icon size={14} />
                 </a>
@@ -117,7 +117,7 @@ export default function Footer() {
           {/* Nav columns */}
           {FOOTER_NAV.map((col) => (
             <div key={col.heading}>
-              <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#F5A623] mb-4">
+              <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-brand-yellow mb-4">
                 {col.heading}
               </div>
               <ul className="space-y-2.5">
@@ -154,7 +154,7 @@ export default function Footer() {
       <div className="flex h-[5px]" aria-hidden="true">
         <div className="flex-1 bg-[#BE1E2D]" />
         <div className="flex-1 bg-[#1A3A7A]" />
-        <div className="flex-1 bg-[#F5A623]" />
+        <div className="flex-1 bg-brand-yellow" />
         <div className="flex-1 bg-[#1B7A3E]" />
       </div>
     </footer>

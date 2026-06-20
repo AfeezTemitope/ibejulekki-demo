@@ -43,7 +43,7 @@ export default function Page({ params }: { params: { slug: string } }) {
               <span className="text-white font-semibold">{p.title}</span>
             </nav>
             <div className="flex items-center gap-4">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#F5A623] text-[24px] font-extrabold text-black">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-yellow text-[24px] font-extrabold text-black">
                 {p.letter}
               </div>
               <Icon size={26} strokeWidth={1.8} className="text-white/60" />
@@ -62,13 +62,13 @@ export default function Page({ params }: { params: { slug: string } }) {
 
           <div className="mt-10">
             <div className="mb-4 flex items-center gap-3">
-              <span className="h-px w-8 bg-[#F5A623]" aria-hidden="true" />
+              <span className="h-px w-8 bg-brand-yellow" aria-hidden="true" />
               <span className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-black/45">Highlights</span>
             </div>
             <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {p.highlights.map((h) => (
                 <li key={h} className="flex items-start gap-3 rounded-xl border border-black/10 bg-white px-4 py-3">
-                  <CheckCircle2 size={16} strokeWidth={2} className="mt-0.5 flex-shrink-0 text-[#F5A623]" />
+                  <CheckCircle2 size={16} strokeWidth={2} className="mt-0.5 flex-shrink-0 text-brand-yellow" />
                   <span className="text-[13px] leading-snug text-black/65">{h}</span>
                 </li>
               ))}
@@ -83,7 +83,7 @@ export default function Page({ params }: { params: { slug: string } }) {
               href="/performance-report.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[#F5A623] px-6 py-3.5 text-[13px] font-bold text-black transition-colors hover:bg-[#111111] hover:text-[#F5A623]"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-brand-yellow px-6 py-3.5 text-[13px] font-bold text-black transition-colors hover:bg-[#111111] hover:text-brand-yellow"
             >
               <Download size={16} strokeWidth={2.5} /> Download report (PDF)
             </a>

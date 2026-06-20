@@ -67,7 +67,7 @@ function DesktopNavItem({ item }: { item: (typeof NAV_ITEMS)[number] }) {
     return (
       <Link
         href={item.href}
-        className="relative whitespace-nowrap text-[11.5px] font-semibold uppercase tracking-wide text-[#111111] transition-colors hover:text-black after:absolute after:-bottom-1.5 after:left-0 after:h-[2px] after:w-0 after:bg-[#F5A623] after:transition-all after:duration-300 hover:after:w-full"
+        className="relative whitespace-nowrap text-[11.5px] font-semibold uppercase tracking-wide text-[#111111] transition-colors hover:text-black after:absolute after:-bottom-1.5 after:left-0 after:h-[2px] after:w-0 after:bg-brand-yellow after:transition-all after:duration-300 hover:after:w-full"
       >
         {item.label}
       </Link>
@@ -100,7 +100,7 @@ function DesktopNavItem({ item }: { item: (typeof NAV_ITEMS)[number] }) {
             <Link
               key={child.href}
               href={child.href}
-              className="block px-4 py-2.5 text-[12.5px] font-medium text-[#111111]/80 transition-colors hover:bg-[#F5A623]/10 hover:text-[#111111]"
+              className="block px-4 py-2.5 text-[12.5px] font-medium text-[#111111]/80 transition-colors hover:bg-brand-yellow/10 hover:text-[#111111]"
             >
               {child.label}
             </Link>
@@ -137,14 +137,14 @@ export default function Header() {
             </span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5 font-semibold text-[#F5A623]">
+            <span className="flex items-center gap-1.5 font-semibold text-brand-yellow">
               <Phone size={12} /> Emergency: 112
             </span>
             <span className="flex items-center gap-1">
-              <Circle size={6} className="fill-[#F5A623] text-[#F5A623]" />
-              <button className="font-semibold tracking-wide transition-colors hover:text-[#F5A623]">EN</button>
+              <Circle size={6} className="fill-brand-yellow text-brand-yellow" />
+              <button className="font-semibold tracking-wide transition-colors hover:text-brand-yellow">EN</button>
               <span className="text-white/30">&middot;</span>
-              <button className="text-white/50 transition-colors hover:text-[#F5A623]">YO</button>
+              <button className="text-white/50 transition-colors hover:text-brand-yellow">YO</button>
             </span>
           </div>
         </div>
@@ -177,7 +177,7 @@ export default function Header() {
 
           <Link
             href="/resources/revenue"
-            className="hidden xl:inline-flex items-center gap-2 rounded-full bg-[#F5A623] px-5 py-2.5 text-[12px] font-bold text-black transition-colors hover:bg-[#111111] hover:text-[#F5A623]"
+            className="hidden xl:inline-flex items-center gap-2 rounded-full bg-brand-yellow px-5 py-2.5 text-[12px] font-bold text-black transition-colors hover:bg-[#111111] hover:text-brand-yellow"
           >
             <CreditCard size={15} strokeWidth={2.5} /> Pay Levies
           </Link>

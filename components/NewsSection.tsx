@@ -87,7 +87,7 @@ export default function NewsSection({ posts }: Props) {
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 sm:mb-12">
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <span className="h-px w-8 bg-[#F5A623]" aria-hidden="true" />
+              <span className="h-px w-8 bg-brand-yellow" aria-hidden="true" />
               <span className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-[#111111]/45">Newsroom</span>
             </div>
             <h2
@@ -112,13 +112,13 @@ export default function NewsSection({ posts }: Props) {
           {/* Featured */}
           <Link
             href={`/news/${featured.slug.current}`}
-            className="group block border border-[#111111]/10 rounded-2xl overflow-hidden hover:border-[#F5A623]/40 hover:shadow-lg transition-all duration-200"
+            className="group block border border-[#111111]/10 rounded-2xl overflow-hidden hover:border-brand-yellow/40 hover:shadow-lg transition-all duration-200"
           >
-            <div className="relative aspect-[16/9] bg-gradient-to-br from-[#F5A623] to-[#E08E0B] flex items-center justify-center overflow-hidden">
+            <div className="relative aspect-[16/9] bg-gradient-to-br from-brand-yellow to-[#E08E0B] flex items-center justify-center overflow-hidden">
               <span className="text-[clamp(3rem,8vw,5rem)] font-extrabold text-black/10 italic tracking-tighter select-none">
                 {CATEGORY_LABELS[featured.category] ?? featured.category}
               </span>
-              <span className="absolute top-4 left-4 bg-[#F5A623] text-black text-[10px] font-bold uppercase tracking-[0.12em] px-3 py-1 rounded-full">
+              <span className="absolute top-4 left-4 bg-brand-yellow text-black text-[10px] font-bold uppercase tracking-[0.12em] px-3 py-1 rounded-full">
                 {CATEGORY_LABELS[featured.category] ?? featured.category}
               </span>
             </div>
@@ -145,9 +145,9 @@ export default function NewsSection({ posts }: Props) {
               <Link
                 key={post._id}
                 href={`/news/${post.slug.current}`}
-                className="group flex gap-4 border border-[#111111]/10 rounded-2xl p-4 sm:p-5 hover:border-[#F5A623]/40 hover:shadow-md transition-all duration-200"
+                className="group flex gap-4 border border-[#111111]/10 rounded-2xl p-4 sm:p-5 hover:border-brand-yellow/40 hover:shadow-md transition-all duration-200"
               >
-                <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-[#F5A623]/15 to-[#F5A623]/15 flex items-center justify-center">
+                <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-brand-yellow/15 to-brand-yellow/15 flex items-center justify-center">
                   <Tag size={18} strokeWidth={1.5} className="text-[#111111]/50" />
                 </div>
                 <div className="flex-1 min-w-0">

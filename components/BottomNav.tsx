@@ -145,7 +145,7 @@ export default function BottomNav() {
                   <span
                     className={
                       primary
-                        ? 'flex h-11 w-11 -mt-5 items-center justify-center rounded-full border-4 border-white bg-[#F5A623] text-black shadow-md'
+                        ? 'flex h-11 w-11 -mt-5 items-center justify-center rounded-full border-4 border-white bg-brand-yellow text-black shadow-md'
                         : `flex h-9 w-9 items-center justify-center rounded-full transition-colors ${active ? 'text-[#111111]' : 'text-black/45'}`
                     }
                   >

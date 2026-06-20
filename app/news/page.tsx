@@ -111,7 +111,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   governance:     'bg-[#111111] text-white',
   infrastructure: 'bg-[#1A3A7A] text-white',
   health:         'bg-emerald-700 text-white',
-  education:      'bg-[#F5A623] text-black',
+  education:      'bg-brand-yellow text-black',
   environment:    'bg-green-700 text-white',
   economy:        'bg-amber-600 text-white',
   security:       'bg-[#BE1E2D] text-white',
@@ -137,7 +137,7 @@ export default async function NewsPage() {
         <div className="border-b border-[#111111]/08 bg-[#FAFAFA]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-10 sm:py-14">
             <div className="flex items-center gap-3 mb-3">
-              <span className="h-px w-8 bg-[#F5A623]" aria-hidden="true" />
+              <span className="h-px w-8 bg-brand-yellow" aria-hidden="true" />
               <span className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-[#111111]/45">Newsroom</span>
             </div>
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
@@ -149,7 +149,7 @@ export default async function NewsPage() {
                 <input
                   type="search"
                   placeholder="Search articles..."
-                  className="w-full pl-9 pr-4 py-2.5 text-[13px] border border-[#111111]/15 rounded-full focus:outline-none focus:border-[#F5A623]/50 transition-colors"
+                  className="w-full pl-9 pr-4 py-2.5 text-[13px] border border-[#111111]/15 rounded-full focus:outline-none focus:border-brand-yellow/50 transition-colors"
                 />
               </div>
             </div>
@@ -163,13 +163,13 @@ export default async function NewsPage() {
             <div className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-[#111111]/35 mb-5">Featured Story</div>
             <Link
               href={`/news/${featured.slug.current}`}
-              className="group grid grid-cols-1 lg:grid-cols-[3fr_2fr] border border-[#111111]/10 rounded-2xl overflow-hidden hover:border-[#F5A623]/40 hover:shadow-lg transition-all duration-200"
+              className="group grid grid-cols-1 lg:grid-cols-[3fr_2fr] border border-[#111111]/10 rounded-2xl overflow-hidden hover:border-brand-yellow/40 hover:shadow-lg transition-all duration-200"
             >
-              <div className="relative aspect-[16/9] lg:aspect-auto lg:min-h-[280px] bg-gradient-to-br from-[#F5A623] to-[#E08E0B] flex items-center justify-center overflow-hidden">
+              <div className="relative aspect-[16/9] lg:aspect-auto lg:min-h-[280px] bg-gradient-to-br from-brand-yellow to-[#E08E0B] flex items-center justify-center overflow-hidden">
                 <span className="text-[clamp(4rem,10vw,7rem)] font-extrabold text-black/10 italic tracking-tighter select-none">
                   {CATEGORY_LABELS[featured.category] ?? featured.category}
                 </span>
-                <span className={`absolute top-4 left-4 text-[10px] font-bold uppercase tracking-[0.12em] px-3 py-1 rounded-full ${CATEGORY_COLORS[featured.category] ?? 'bg-[#F5A623] text-black'}`}>
+                <span className={`absolute top-4 left-4 text-[10px] font-bold uppercase tracking-[0.12em] px-3 py-1 rounded-full ${CATEGORY_COLORS[featured.category] ?? 'bg-brand-yellow text-black'}`}>
                   Featured
                 </span>
               </div>
@@ -201,9 +201,9 @@ export default async function NewsPage() {
                 <Link
                   key={post._id}
                   href={`/news/${post.slug.current}`}
-                  className="group flex flex-col border border-[#111111]/10 rounded-2xl overflow-hidden hover:border-[#F5A623]/40 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                  className="group flex flex-col border border-[#111111]/10 rounded-2xl overflow-hidden hover:border-brand-yellow/40 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
                 >
-                  <div className="relative aspect-[16/9] bg-gradient-to-br from-[#F5A623]/12 to-[#F5A623]/10 flex items-center justify-center overflow-hidden">
+                  <div className="relative aspect-[16/9] bg-gradient-to-br from-brand-yellow/12 to-brand-yellow/10 flex items-center justify-center overflow-hidden">
                     <Tag size={28} strokeWidth={1} className="text-[#111111]/20" />
                     <span className={`absolute top-3 left-3 text-[9.5px] font-bold uppercase tracking-[0.12em] px-2.5 py-1 rounded-full ${CATEGORY_COLORS[post.category] ?? 'bg-[#111111] text-white'}`}>
                       {CATEGORY_LABELS[post.category] ?? post.category}
