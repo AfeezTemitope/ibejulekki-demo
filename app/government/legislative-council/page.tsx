@@ -1,13 +1,20 @@
-import PagePlaceholder from '@/components/PagePlaceholder'
+import TeamPage from '@/components/TeamPage'
+import { LEGISLATIVE } from '@/lib/cabinet'
 
-export const metadata = { title: 'Legislative Council | Ibeju-Lekki Local Government' }
+export const metadata = {
+  title: 'Legislative Council | Ibeju-Lekki Local Government',
+  description:
+    'The legislative arm of Ibeju-Lekki Local Government: councillors elected to represent the wards, with the leadership of the house.',
+}
 
 export default function Page() {
   return (
-    <PagePlaceholder
+    <TeamPage
+      group="Legislative Council"
+      eyebrow="Government &middot; Legislative"
       title="Legislative Council"
-      sectionLabel="Government"
-      description="The Legislative arm and councillors of Ibeju-Lekki."
+      intro="The legislative arm makes local laws, approves the budget and provides oversight. It is made up of councillors elected to represent the wards of Ibeju-Lekki, with the leadership of the house."
+      members={LEGISLATIVE}
     />
   )
 }
