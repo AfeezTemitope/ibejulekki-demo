@@ -45,7 +45,7 @@ const FOOTER_NAV = [
 ]
 
 const SETTINGS = {
-  address:  'Local Government Secretariat,\nIbeju-Lekki, Lagos State, Nigeria',
+  address:  'Km 47, Lekki-Epe Expressway,\nIgando-Oloja, Ibeju-Lekki, Lagos.',
   phone:    '+234 (0) 813 000 0000',
   email:    'info@ibejulekki.lg.gov.ng',
   socials:  { twitter: '#', facebook: '#', instagram: '#', youtube: '#' },
