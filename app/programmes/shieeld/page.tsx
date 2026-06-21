@@ -23,7 +23,6 @@ export default function Page() {
   return (
     <>
       <main className="min-h-screen bg-white">
-        {/* Chairman + intro */}
         <section className="border-b border-black/10 bg-[#FAFAFA]">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-10 py-10 sm:py-14">
             <nav className="flex items-center flex-wrap gap-1.5 text-[11px] sm:text-[12px] text-black/45 mb-6" aria-label="Breadcrumb">
@@ -69,7 +68,6 @@ export default function Page() {
           </div>
         </section>
 
-        {/* Pillars (clickable) */}
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
             {PILLARS.map((p) => {
@@ -78,21 +76,23 @@ export default function Page() {
                 <Link
                   key={p.slug}
                   href={`/programmes/shieeld/${p.slug}`}
-                  className="group flex gap-4 rounded-2xl border border-black/10 bg-white p-5 sm:p-6 transition-all hover:border-brand-yellow hover:shadow-md"
+                  className="group flex flex-col rounded-2xl border border-black/10 bg-white p-5 sm:p-6 transition-all hover:border-brand-yellow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-brand-yellow text-[20px] font-extrabold text-black">
-                    {p.letter}
-                  </div>
-                  <div className="min-w-0">
-                    <div className="mb-1.5 flex items-center gap-2">
-                      <Icon size={15} strokeWidth={2} className="text-[#111111] flex-shrink-0" />
-                      <h2 className="text-[14.5px] font-bold text-[#111111] leading-snug">{p.title}</h2>
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-brand-yellow text-[18px] font-extrabold text-black">
+                      {p.letter}
                     </div>
-                    <p className="text-[13px] leading-[1.7] text-black/55 line-clamp-2">{p.summary}</p>
-                    <span className="mt-2 inline-flex items-center gap-1 text-[12px] font-semibold text-[#B26B00] transition-all group-hover:gap-2">
-                      Read more <ArrowRight size={13} strokeWidth={2.5} />
-                    </span>
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-2">
+                        <Icon size={14} strokeWidth={2} className="text-[#111111] flex-shrink-0" />
+                        <h2 className="text-[14.5px] font-bold text-[#111111] leading-snug">{p.title}</h2>
+                      </div>
+                    </div>
                   </div>
+                  <p className="mt-3 text-[12.5px] italic leading-[1.7] text-black/55">&ldquo;{p.summary}&rdquo;</p>
+                  <span className="mt-3 inline-flex items-center gap-1 text-[12px] font-semibold text-[#B26B00] transition-all group-hover:gap-2">
+                    Read more <ArrowRight size={13} strokeWidth={2.5} />
+                  </span>
                 </Link>
               )
             })}

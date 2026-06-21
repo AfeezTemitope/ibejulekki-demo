@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import {
-  ArrowLeft, ArrowRight, Download, CheckCircle2,
+  ArrowLeft, ArrowRight, Download, CheckCircle2, Quote,
   ShieldCheck, HeartPulse, Building2, Leaf, GraduationCap, TrendingUp, LayoutDashboard,
 } from 'lucide-react'
 import Footer from '@/components/Footer'
@@ -28,13 +28,17 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
 }
 
 export default function Page({ params }: { params: { slug: string } }) {
-  const p = PILLARS.find((x) => x.slug === params.slug)
-  if (!p) notFound()
+  const idx = PILLARS.findIndex((x) => x.slug === params.slug)
+  if (idx === -1) notFound()
+  const p = PILLARS[idx]
   const Icon = ICONS[p.icon]
+  const prev = PILLARS[(idx - 1 + PILLARS.length) % PILLARS.length]
+  const next = PILLARS[(idx + 1) % PILLARS.length]
 
   return (
     <>
       <main className="min-h-screen bg-white">
+        {/* Hero */}
         <section className="bg-[#111111] text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-16">
             <nav className="flex items-center flex-wrap gap-1.5 text-[11px] sm:text-[12px] text-white/45 mb-6" aria-label="Breadcrumb">
@@ -55,13 +59,25 @@ export default function Page({ params }: { params: { slug: string } }) {
           </div>
         </section>
 
-        {/* Manifesto cover banner */}
+        {/* Verbatim manifesto pull-quote */}
         <section className="bg-[#FAFAFA] border-b border-black/10">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-10 py-8 sm:py-10">
+            <blockquote className="relative rounded-2xl border border-black/10 bg-white p-6 sm:p-8 shadow-sm">
+              <Quote size={26} strokeWidth={2} className="absolute -top-3 left-6 text-brand-yellow" fill="currentColor" />
+              <p className="text-[clamp(1rem,2.6vw,1.4rem)] font-semibold leading-[1.5] text-[#111111]">
+                &ldquo;{p.summary}&rdquo;
+              </p>
+            </blockquote>
+          </div>
+        </section>
+
+        {/* Infographic */}
+        <section className="bg-[#FAFAFA] border-b border-black/10">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-10 pb-8 sm:pb-10">
             <div className="relative w-full overflow-hidden rounded-2xl border border-black/10 shadow-sm" style={{ aspectRatio: '110 / 78' }}>
               <Image
                 src={p.cover}
-                alt={`${p.title} manifesto pillar page`}
+                alt={`${p.title} manifesto infographic`}
                 fill
                 className="object-cover"
                 sizes="(max-width: 896px) 100vw, 896px"
@@ -77,16 +93,17 @@ export default function Page({ params }: { params: { slug: string } }) {
             ))}
           </div>
 
+          {/* Priorities (verbatim manifesto items) */}
           <div className="mt-10">
             <div className="mb-4 flex items-center gap-3">
               <span className="h-px w-8 bg-brand-yellow" aria-hidden="true" />
-              <span className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-black/45">Key plans</span>
+              <span className="text-[10.5px] font-bold uppercase tracking-[0.25em] text-black/45">{p.prioritiesLabel}</span>
             </div>
             <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {p.highlights.map((h) => (
-                <li key={h} className="flex items-start gap-3 rounded-xl border border-black/10 bg-white px-4 py-3">
+              {p.priorities.map((item) => (
+                <li key={item} className="flex items-start gap-3 rounded-xl border border-black/10 bg-white px-4 py-3.5">
                   <CheckCircle2 size={16} strokeWidth={2} className="mt-0.5 flex-shrink-0 text-brand-yellow" />
-                  <span className="text-[13px] leading-snug text-black/65">{h}</span>
+                  <span className="text-[13px] leading-snug text-black/70">{item}</span>
                 </li>
               ))}
             </ul>
@@ -105,12 +122,21 @@ export default function Page({ params }: { params: { slug: string } }) {
             </a>
           </div>
 
-          <div className="mt-8 flex items-center justify-between">
-            <Link href="/programmes/shieeld" className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-[#B26B00] transition-colors hover:text-[#111111]">
-              <ArrowLeft size={14} strokeWidth={2.5} /> All pillars
+          {/* Prev / next pillar */}
+          <div className="mt-8 grid grid-cols-2 gap-3">
+            <Link href={`/programmes/shieeld/${prev.slug}`} className="flex items-center gap-2 rounded-xl border border-black/10 bg-white px-4 py-3 text-left transition-colors hover:border-brand-yellow">
+              <ArrowLeft size={15} strokeWidth={2.5} className="flex-shrink-0 text-[#B26B00]" />
+              <span className="min-w-0">
+                <span className="block text-[10px] uppercase tracking-wide text-black/40">Previous</span>
+                <span className="block truncate text-[12.5px] font-semibold text-[#111111]">{prev.title}</span>
+              </span>
             </Link>
-            <Link href="/programmes/budget" className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-[#B26B00] transition-colors hover:text-[#111111]">
-              Performance Report <ArrowRight size={14} strokeWidth={2.5} />
+            <Link href={`/programmes/shieeld/${next.slug}`} className="flex items-center justify-end gap-2 rounded-xl border border-black/10 bg-white px-4 py-3 text-right transition-colors hover:border-brand-yellow">
+              <span className="min-w-0">
+                <span className="block text-[10px] uppercase tracking-wide text-black/40">Next</span>
+                <span className="block truncate text-[12.5px] font-semibold text-[#111111]">{next.title}</span>
+              </span>
+              <ArrowRight size={15} strokeWidth={2.5} className="flex-shrink-0 text-[#B26B00]" />
             </Link>
           </div>
         </section>
