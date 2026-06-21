@@ -22,7 +22,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   const p = PILLARS.find((x) => x.slug === params.slug)
   return {
     title: p
-      ? `${p.title} \u2014 SHIEELD Agenda | Ibeju-Lekki Local Government`
+      ? `${p.title} - SHIEELD Agenda | Ibeju-Lekki Local Government`
       : 'SHIEELD Agenda | Ibeju-Lekki Local Government',
   }
 }
@@ -61,7 +61,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             <div className="relative w-full overflow-hidden rounded-2xl border border-black/10 shadow-sm" style={{ aspectRatio: '110 / 78' }}>
               <Image
                 src={p.cover}
-                alt={`${p.title} \u2014 manifesto pillar page`}
+                alt={`${p.title} manifesto pillar page`}
                 fill
                 className="object-cover"
                 sizes="(max-width: 896px) 100vw, 896px"
