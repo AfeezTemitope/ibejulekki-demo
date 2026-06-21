@@ -7,8 +7,8 @@ const PLACEHOLDER = {
   title: 'Executive Chairman, Ibeju-Lekki Local Government',
   pullQuote: 'Our dedication is rooted in the comprehensive advancement of Ibeju-Lekki. Through the SHIEELD Agenda, we are transforming this LGA into a model of modern governance and sustainable development.',
   stats: [
-    { value:'4,000',  label:'Households Uplifted',  detail:'Renewed Hope Cash Transfer' },
-    { value:'150+',   label:'JAMB Scholarships',    detail:'Free JAMB forms programme' },
+    { value:'20,000+',  label:'People Reached',  detail:'Food Palliative Programme' },
+    { value:'400',   label:'Free JAMB Forms Annually',    detail:'Student Admission Support' },
     { value:'No. 57', label:'Conference Chairman',  detail:'League of LG Chairmen, Lagos' },
     { value:'7',      label:'SHIEELD Pillars',      detail:'The governance framework' },
   ],
