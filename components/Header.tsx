@@ -161,7 +161,7 @@ export default function Header() {
             />
             <span className="leading-tight">
               <span className="block text-[15px] sm:text-[17px] font-extrabold tracking-tight text-[#111111]">
-                Ibeju-Lekki <span className="text-[#B26B00]">LGA</span>
+                IBEJU LEKKI 
               </span>
               <span className="block text-[9.5px] sm:text-[10px] font-medium uppercase tracking-[0.18em] text-black/45">
                 Local Government<br />Lagos State
