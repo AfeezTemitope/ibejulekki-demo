@@ -34,7 +34,7 @@ export default function Page() {
             </nav>
 
             <div className="flex flex-col sm:flex-row items-center sm:items-end gap-6 sm:gap-9">
-              <div className="relative w-40 h-52 sm:w-48 sm:h-64 flex-shrink-0 overflow-hidden rounded-2xl bg-[#111111] shadow-lg">
+              <div className="relative w-40 h-52 sm:w-48 sm:h-64 flex-shrink-0 overflow-hidden rounded-2xl bg-[#D9D9D9] shadow-lg">
                 <Image
                   src="/chairman.webp"
                   alt="Hon. Abdullahi Sesan Olowa, Executive Chairman"

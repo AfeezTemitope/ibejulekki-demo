@@ -25,7 +25,7 @@ const NAV_ITEMS = [
       { label: 'SHIEELD Agenda',      href: '/programmes/shieeld' },
       { label: '2025 Budget Summary', href: '/programmes/budget' },
       { label: 'Performance Report',  href: '/programmes/performance-report' },
-      { label: 'Agenda 2029',         href: '/programmes/agenda-2029' },
+      // { label: 'Agenda 2029',         href: '/programmes/agenda-2029' },
     ],
   },
   {

@@ -17,7 +17,7 @@ const FOOTER_NAV = [
     heading: 'Programmes',
     links: [
       { label: 'SHIEELD Agenda',      href: '/programmes/shieeld' },
-      { label: 'Agenda 2029',         href: '/programmes/agenda-2029' },
+      // { label: 'Agenda 2029',         href: '/programmes/agenda-2029' },
       { label: '2025 Budget',         href: '/programmes/budget' },
       { label: 'Performance Report',  href: '/programmes/performance-report' },
     ],
