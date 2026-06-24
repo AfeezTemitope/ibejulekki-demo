@@ -156,7 +156,7 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-3">
             <img
               src="/ibeju-lekki-logo-sm.webp"
-              alt="Ibeju-Lekki LGA"
+              alt="IBEJU LEKKI"
               className="h-11 w-11 flex-shrink-0 object-contain"
             />
             <span className="leading-tight">
