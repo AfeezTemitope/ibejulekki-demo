@@ -43,3 +43,5 @@ next-env.d.ts
 .env.local.example
 *.sh
 *.txt
+posts.json
+import-wp-news.cjs

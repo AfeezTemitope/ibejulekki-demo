@@ -1,10 +1,13 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
-import { client } from '@/lib/sanity'
-import { newsPostBySlugQuery, allNewsSlugsQuery } from '@/lib/queries'
+import { groq } from 'next-sanity'
+import { client, urlFor } from '@/lib/sanity'
+import { newsPostBySlugQuery } from '@/lib/queries'
 import { Calendar, Tag, ArrowLeft } from 'lucide-react'
 import Footer from '@/components/Footer'
 import ShareButton from '@/components/ShareButton'
+import PortableBody from '@/components/PortableBody'
 
 export const revalidate = 60
 
@@ -16,94 +19,22 @@ const CATEGORY_LABELS: Record<string, string> = {
 
 const PLACEHOLDER_POSTS: Record<string, any> = {
   'lasg-local-government-development-plan': {
-    _id: 'n1',
-    title: 'LASG Set To Drive Local Government Development Plan Across All 57 LGAs',
-    slug: { current: 'lasg-local-government-development-plan' },
-    category: 'governance',
-    publishedAt: '2026-04-17T09:00:00Z',
-    author: 'Ibeju-Lekki LGA Communications',
+    _id: 'n1', title: 'LASG Set To Drive Local Government Development Plan Across All 57 LGAs',
+    slug: { current: 'lasg-local-government-development-plan' }, category: 'governance',
+    publishedAt: '2026-04-17T09:00:00Z', author: 'Ibeju-Lekki LGA Communications',
     summary: 'Conference 57 Chairman Hon. Abdullahi Sesan Olowa appreciates a unified Lagos State plan for accelerated growth and service delivery across all 57 local government areas.',
-    body: null, coverImage: null,
-  },
-  'gbadamosi-alo-street-rehabilitation': {
-    _id: 'n2',
-    title: 'Stakeholders Meeting on Gbadamosi Alo Street Rehabilitation',
-    slug: { current: 'gbadamosi-alo-street-rehabilitation' },
-    category: 'infrastructure',
-    publishedAt: '2026-03-01T09:00:00Z',
-    author: 'Ibeju-Lekki LGA Communications',
-    summary: 'Council convenes stakeholders to discuss plans for the rehabilitation of Gbadamosi Alo Street and surrounding access roads.',
-    body: null, coverImage: null,
-  },
-  'women-empowerment-programme': {
-    _id: 'n3',
-    title: 'Women Empowerment Programme Holds at Council Secretariat',
-    slug: { current: 'women-empowerment-programme' },
-    category: 'community',
-    publishedAt: '2025-11-30T09:00:00Z',
-    author: 'Ibeju-Lekki LGA Communications',
-    summary: 'Over 300 women from across Ibeju-Lekki participated in the quarterly empowerment programme organised by the council social development department.',
-    body: null, coverImage: null,
-  },
-  '33kv-power-line-rehabilitation': {
-    _id: 'n4',
-    title: '33KV Overhead Power Line Rehabilitation Flag-off at Ibeju Long Bridge',
-    slug: { current: '33kv-power-line-rehabilitation' },
-    category: 'infrastructure',
-    publishedAt: '2025-11-22T09:00:00Z',
-    author: 'Ibeju-Lekki LGA Communications',
-    summary: 'The Executive Chairman flags off rehabilitation of the 33KV overhead power line, a project expected to improve electricity supply across major corridors.',
-    body: null, coverImage: null,
-  },
-  'akodo-market-stalls-commissioning': {
-    _id: 'n5',
-    title: 'Executive Chairman Commissions New Market Stalls at Akodo',
-    slug: { current: 'akodo-market-stalls-commissioning' },
-    category: 'economy',
-    publishedAt: '2025-10-14T09:00:00Z',
-    author: 'Ibeju-Lekki LGA Communications',
-    summary: 'Hon. Abdullahi Sesan Olowa commissions 120 new market stalls at Akodo market, boosting local trade and providing new livelihoods for residents.',
-    body: null, coverImage: null,
-  },
-  'free-medical-outreach-2025': {
-    _id: 'n6',
-    title: 'Free Medical Outreach Reaches Over 2,000 Residents in Ibeju-Lekki',
-    slug: { current: 'free-medical-outreach-2025' },
-    category: 'health',
-    publishedAt: '2025-09-05T09:00:00Z',
-    author: 'Ibeju-Lekki LGA Communications',
-    summary: 'The council health department conducts a free medical outreach covering malaria, hypertension, diabetes, and eye care.',
-    body: null, coverImage: null,
-  },
-  'inter-ward-security-summit': {
-    _id: 'n7',
-    title: 'Ibeju-Lekki Hosts Inter-Ward Security Summit',
-    slug: { current: 'inter-ward-security-summit' },
-    category: 'security',
-    publishedAt: '2025-08-20T09:00:00Z',
-    author: 'Ibeju-Lekki LGA Communications',
-    summary: 'Ward leaders, community heads, and security agencies gather at the council secretariat to align on a joint security framework.',
-    body: null, coverImage: null,
-  },
-  'free-jamb-forms-distribution': {
-    _id: 'n8',
-    title: 'Council Begins Distribution of Free JAMB Forms to SS3 Students',
-    slug: { current: 'free-jamb-forms-distribution' },
-    category: 'education',
-    publishedAt: '2025-07-10T09:00:00Z',
-    author: 'Ibeju-Lekki LGA Communications',
-    summary: 'Over 150 SS3 students across public schools in Ibeju-Lekki receive free JAMB registration forms as part of the chairman education empowerment initiative.',
     body: null, coverImage: null,
   },
 }
 
+// Pre-build only the 30 newest articles; the rest render on demand and cache
+// (keeps the Vercel build fast even with hundreds of posts).
 export async function generateStaticParams() {
   try {
-    const slugs = await client.fetch(allNewsSlugsQuery)
-    const placeholderSlugs = Object.keys(PLACEHOLDER_POSTS).map((s) => ({ slug: s }))
-    return [...(slugs ?? []), ...placeholderSlugs]
+    const slugs = await client.fetch(groq`*[_type == "news" && defined(slug.current)] | order(publishedAt desc)[0...30]{ "slug": slug.current }`)
+    return (slugs ?? []).map((s: any) => ({ slug: s.slug }))
   } catch {
-    return Object.keys(PLACEHOLDER_POSTS).map((s) => ({ slug: s }))
+    return []
   }
 }
 
@@ -119,18 +50,18 @@ export default async function NewsPost({ params }: { params: { slug: string } })
   if (!post) post = PLACEHOLDER_POSTS[params.slug] ?? null
   if (!post) notFound()
 
+  const hasBody = Array.isArray(post.body) && post.body.length > 0
+  const cover = post.coverImage?.asset
+    ? urlFor(post.coverImage).width(1200).height(675).fit('crop').auto('format').url()
+    : null
+
   return (
     <>
-
       <main className="min-h-screen bg-white">
-
         {/* Hero banner */}
         <div className="bg-[#111111] py-14 sm:py-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-10">
-            <Link
-              href="/news"
-              className="inline-flex items-center gap-2 text-[11.5px] font-semibold text-white/60 hover:text-white transition-colors mb-6"
-            >
+            <Link href="/news" className="inline-flex items-center gap-2 text-[11.5px] font-semibold text-white/60 hover:text-white transition-colors mb-6">
               <ArrowLeft size={14} strokeWidth={2} /> Back to News
             </Link>
             <div className="flex items-center gap-3 mb-4">
@@ -142,47 +73,41 @@ export default async function NewsPost({ params }: { params: { slug: string } })
               {post.title}
             </h1>
             <div className="flex flex-wrap items-center gap-4 text-[11.5px] text-white/55">
-              <span className="flex items-center gap-1.5">
-                <Calendar size={12} strokeWidth={2} />
-                {formatDate(post.publishedAt)}
-              </span>
-              {post.author && (
-                <span className="flex items-center gap-1.5">
-                  <Tag size={12} strokeWidth={2} />
-                  {post.author}
-                </span>
-              )}
+              <span className="flex items-center gap-1.5"><Calendar size={12} strokeWidth={2} />{formatDate(post.publishedAt)}</span>
+              {post.author && <span className="flex items-center gap-1.5"><Tag size={12} strokeWidth={2} />{post.author}</span>}
             </div>
           </div>
         </div>
 
+        {/* Cover image */}
+        {cover ? (
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-10 -mt-8 sm:-mt-10 relative z-10">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-[#111111]/10 shadow-lg bg-[#FAFAFA]">
+              <Image src={cover} alt={post.coverImage?.alt || post.title} fill className="object-cover" sizes="(max-width: 896px) 100vw, 896px" priority />
+            </div>
+          </div>
+        ) : null}
+
         {/* Article body */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-16">
-
           <p className="text-[16px] sm:text-[17px] text-[#111111]/70 leading-[1.8] font-medium border-l-[3px] border-brand-yellow pl-5 mb-10">
             {post.summary}
           </p>
 
-          {post.body ? (
-            <div className="prose prose-lg max-w-none text-[#111111]/75">
-              <p className="text-[14px] text-[#111111]/45 italic">Full article content loading...</p>
-            </div>
+          {hasBody ? (
+            <article className="max-w-none">
+              <PortableBody value={post.body} />
+            </article>
           ) : (
-            <div className="bg-[#FAFAFA] border border-[#111111]/08 rounded-2xl p-8 text-center">
+            <div className="bg-[#FAFAFA] border border-[#111111]/10 rounded-2xl p-8 text-center">
               <div className="text-[13px] text-[#111111]/40 mb-2">Full article content</div>
-              <div className="text-[12px] text-[#111111]/30">
-                The complete article will appear here once published in the CMS.
-              </div>
+              <div className="text-[12px] text-[#111111]/30">The complete article will appear here once published in the CMS.</div>
             </div>
           )}
 
-          {/* Footer actions */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-12 pt-8 border-t border-[#111111]/08">
-            <Link
-              href="/news"
-              className="inline-flex items-center gap-2 text-[12.5px] font-bold text-[#111111] hover:text-[#B26B00] transition-colors"
-            >
-              <ArrowLeft size={14} strokeWidth={2.5} /> All News & Events
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-12 pt-8 border-t border-[#111111]/10">
+            <Link href="/news" className="inline-flex items-center gap-2 text-[12.5px] font-bold text-[#111111] hover:text-[#B26B00] transition-colors">
+              <ArrowLeft size={14} strokeWidth={2.5} /> All News &amp; Events
             </Link>
             <ShareButton title={post.title} />
           </div>

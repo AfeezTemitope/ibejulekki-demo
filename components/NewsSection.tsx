@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import Image from 'next/image'
+import { urlFor } from '@/lib/sanity'
 import { ArrowRight, ChevronRight, Calendar, Tag } from 'lucide-react'
 
 const PLACEHOLDER_NEWS = [
@@ -114,10 +116,12 @@ export default function NewsSection({ posts }: Props) {
             href={`/news/${featured.slug.current}`}
             className="group block border border-[#111111]/10 rounded-2xl overflow-hidden hover:border-brand-yellow/40 hover:shadow-lg transition-all duration-200"
           >
-            <div className="relative aspect-[16/9] bg-gradient-to-br from-brand-yellow to-[#E08E0B] flex items-center justify-center overflow-hidden">
-              <span className="text-[clamp(3rem,8vw,5rem)] font-extrabold text-black/10 italic tracking-tighter select-none">
-                {CATEGORY_LABELS[featured.category] ?? featured.category}
-              </span>
+            <div className="relative aspect-[16/9] overflow-hidden">
+              {featured.coverImage?.asset ? (
+                <Image src={urlFor(featured.coverImage).width(900).height(506).fit('crop').auto('format').url()} alt={featured.coverImage.alt || featured.title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 60vw" />
+              ) : (
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-yellow to-[#E08E0B] flex items-center justify-center"><span className="text-[clamp(3rem,8vw,5rem)] font-extrabold text-black/10 italic tracking-tighter select-none">{CATEGORY_LABELS[featured.category] ?? featured.category}</span></div>
+              )}
               <span className="absolute top-4 left-4 bg-brand-yellow text-black text-[10px] font-bold uppercase tracking-[0.12em] px-3 py-1 rounded-full">
                 {CATEGORY_LABELS[featured.category] ?? featured.category}
               </span>
@@ -147,8 +151,12 @@ export default function NewsSection({ posts }: Props) {
                 href={`/news/${post.slug.current}`}
                 className="group flex gap-4 border border-[#111111]/10 rounded-2xl p-4 sm:p-5 hover:border-brand-yellow/40 hover:shadow-md transition-all duration-200"
               >
-                <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-brand-yellow/15 to-brand-yellow/15 flex items-center justify-center">
-                  <Tag size={18} strokeWidth={1.5} className="text-[#111111]/50" />
+                <div className="relative flex-shrink-0 w-14 h-14 rounded-xl overflow-hidden bg-brand-yellow/12 flex items-center justify-center">
+                  {post.coverImage?.asset ? (
+                    <Image src={urlFor(post.coverImage).width(120).height(120).fit('crop').auto('format').url()} alt={post.coverImage.alt || post.title} fill className="object-cover" sizes="56px" />
+                  ) : (
+                    <Tag size={18} strokeWidth={1.5} className="text-[#111111]/50" />
+                  )}
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1.5">
